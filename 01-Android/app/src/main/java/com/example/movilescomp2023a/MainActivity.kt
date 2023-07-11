@@ -1,5 +1,6 @@
 package com.example.movilescomp2023a
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -12,35 +13,22 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.movilescomp2023a.ui.theme.MovilesComp2023ATheme
 
-class MainActivity : ComponentActivity() {
+class MainActivity : ComponentActivity() {//casi toda la logica del negocio
+    //dentro de android una actividad es una pantalla
+    //
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            MovilesComp2023ATheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android que tal como te va")
-                }
-            }
-        }
+        setContentView(R.layout.activity_main)//lo que se va a presentar es del main_activity
+    //brother voy a usar esta clase y esta interface
+    }
+
+    fun irActividad(
+        clase: Class<*>
+    ){
+        val intent = Intent(this,clase)
+        startActivity(intent)
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MovilesComp2023ATheme {
-        Greeting("Android hola mundo")
-    }
-}
+
