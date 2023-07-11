@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="bienvenida">Welcome PORT</string>
-    <color name="background">#EA80FC</color>
-    <color name="textColor">#FFE0B2</color>
-
-</resources>
