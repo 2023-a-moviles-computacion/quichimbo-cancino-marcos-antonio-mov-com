@@ -16,6 +16,18 @@ class AACicloVida : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityAacicloVidaBinding
 
+
+    var textoGlobal = ""
+
+    fun mostrarSnackbar(texto: String) { //mensaje que va a aperecer en pantalla
+        textoGlobal += texto
+        Snackbar.make(
+            findViewById(R.id.cl_ciclo_vida),
+            textoGlobal, Snackbar.LENGTH_LONG
+        )
+            .setAction("Action", null).show()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
@@ -34,16 +46,43 @@ class AACicloVida : AppCompatActivity() {
                 .setAnchorView(R.id.fab)
                 .setAction("Action", null).show()
         }
+        mostrarSnackbar ("Oncreate")
+    }//onCreate fin del bloque de codigo
+    override fun onStart() {
+        super.onStart()
+        mostrarSnackbar("onStart")
+    }
+    override fun onResume() {
+        super.onResume()
+        mostrarSnackbar("onResume")
+    }
+    override fun onRestart() {
+        super.onRestart()
+        mostrarSnackbar("onRestart")
+    }
+    override fun onPause() {
+        super.onPause()
+        mostrarSnackbar("onPause")
+    }
+    override fun onStop() {
+        super.onStop()
+        mostrarSnackbar("onStop")
     }
 
-    var textoGlobal = ""
-
-    fun mostrarSnackbar(texto:String){
-        textoGlobal += texto
-        Snackbar.make(findViewById(R.id.cl_ciclo_vida),
-            textoGlobal, Snackbar.LENGTH_LONG)
-            .setAction("Action", null).show()
+    override fun onDestroy() {
+        super.onDestroy()
+        mostrarSnackbar("onDestroy")
     }
+
+
+
+
+
+
+
+
+
+
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_aaciclo_vida)
         return navController.navigateUp(appBarConfiguration)
@@ -51,4 +90,4 @@ class AACicloVida : AppCompatActivity() {
     }
 }
 
-hasta minuto 35
+    //hasta minuto 35
