@@ -1,0 +1,34 @@
+1. Introducción:
+   - Saludo y presentación del grupo.
+   - Explicación breve del propósito del video y del tema a tratar: Single Sign-On (SSO).
+   - Mención de la estructura del video y los temas que se abordarán.
+
+2. Fundamentos de Single Sign-On:
+   - Introducción al concepto de SSO y su importancia en la seguridad de las aplicaciones.
+   - Explica los beneficios y las razones para implementar SSO en entornos empresariales.
+   - Describe los diferentes protocolos y estándares utilizados en SSO, como OAuth y SAML.
+
+3. Arquitectura y componentes de SSO:
+   - Explica la arquitectura básica de SSO y los componentes clave, como el proveedor de identidad (IdP) y el proveedor de servicios (SP).
+   - Describe los distintos tipos de flujos de autenticación utilizados en SSO, como el flujo de autorización implícita y el flujo de autorización de código.
+
+4. Implementación de Single Sign-On:
+   - Presenta una demostración paso a paso de cómo implementar SSO utilizando una herramienta popular, como Okta o Azure Active Directory.
+   - Proporciona ejemplos prácticos de cómo configurar y establecer la comunicación entre un IdP y un SP.
+   - Presenta casos de uso comunes de SSO en entornos empresariales, como el acceso a aplicaciones en la nube y el inicio de sesión único en diferentes sistemas.
+
+
+5. Consideraciones de seguridad en SSO:
+   - Discute los desafíos y las mejores prácticas en seguridad relacionadas con la implementación de SSO, como el manejo seguro de tokens de acceso y la protección contra ataques de suplantación de identidad (spoofing).
+   - Explica cómo se puede garantizar la privacidad y el cumplimiento normativo al implementar SSO.
+   - Comparte ejemplos reales de empresas que han implementado SSO con éxito y cómo ha mejorado su experiencia de autenticación.
+
+
+6. Conclusiones y cierre:
+   - Resumen de los puntos clave abordados en el video.
+   - Destacar la importancia de SSO en la seguridad y la comodidad del usuario.
+   - Agradecimiento al grupo y a la audiencia.
+
+Okta (https://www.okta.com/)
+Azure Active Directory (https://azure.microsoft.com/en-us/services/active-directory/)
+
