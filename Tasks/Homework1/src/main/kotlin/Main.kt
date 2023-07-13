@@ -7,7 +7,7 @@ fun main() {
     // Crea un ArrayList de SistemaOp para almacenar las SistemasOp.
     var arraySistemaOps : ArrayList<SistemaOp> = arrayListOf<SistemaOp>()
 
-    // Lee los datos de archivo y los carga en el ArrayList de Playlist.
+    // Lee los datos de archivo y los carga en el ArrayList de arraySistemaOps.
     readFile(arraySistemaOps)
 
     // Inicia un bucle do-while para mostrar el menú al usuario.
@@ -74,7 +74,6 @@ fun main() {
                             var continuar = "y"
                             do {
                                 createDistribucion(arraySistemaOps, idEnterSistemaO)
-                                //printCancion(arrayPlaylist, idPlt)
                                 println("Seguir insertando? y/n")
                                 continuar = readln()
                             }while (continuar=="y")
@@ -146,7 +145,6 @@ fun deleteSistemaO(arraySistemaOp:ArrayList<SistemaOp>){
     // Itera sobre cada elemento en el ArrayList de arraySistemaOp.
     for (element in arraySistemaOp) {
         if (element.idSo==idToDelete) {
-            // Imprime el índice de la Playlist en el ArrayList.
             println("el index:"+arraySistemaOp.indexOf(element))
 
             // Elimina el SitemaOp del ArrayList utilizando su índice.
@@ -184,12 +182,11 @@ fun updteSistemaO(arraySistemaOp: ArrayList<SistemaOp>) {
 
 fun printSistemaOLst(arraySistemaOp: ArrayList<SistemaOp>){
 
-    println("%-4s%-20s%-30s%-20s%-10s".format("ID", "Nombre", "Arquitectura", "Descontinuado", "Distribuciones"))
-    // Itera sobre cada playlist en arraySistemaOp.
-    for (playt in arraySistemaOp)
+    println("%-4s%-20s%-30s%-20s%-10s".format("ID", "Nombre", "Version", "Descontinuado", "Distribuciones"))
+    for (sistOp in arraySistemaOp)
     {
-         println("%-4d%-20s%-30s%-20s%-10s".format(playt.idSo,playt.nombreSo,playt.versionSo
-                ,playt.continua,playt.sistemasOperativos))
+         println("%-4d%-20s%-30s%-20s%-10s".format(sistOp.idSo,sistOp.nombreSo,sistOp.versionSo
+                ,sistOp.continua,sistOp.sistemasOperativos))
     }
 }
 
@@ -214,12 +211,9 @@ fun printDistribucion(arraySistemaOp: ArrayList<SistemaOp>, idSistemaOList: Int)
     // Itera sobre cada elemento en arraySistemaOp.
     for (element in arraySistemaOp) {
         if (element.idSo==idSistemaOLst) {
-            // Imprime el nombre de la Playlist en mayúsculas.
-            println("PLAYLIST " + element.nombreSo.uppercase())
-            //println("\nIDP\tID\tNombre\tArtista\tGenero\n")
+            println("Sistema Operativo " + element.nombreSo.uppercase())
             println("%-4s%-4s%-20s%-20s%-20s".format("IDSistemaOp", "IDDistro", "NombreDistro", "Arquitectura", "FechaLanzamiento"))
 
-            // Itera sobre cada canción en la lista de canciones de la playlist actual.
             for (song in element.sistemasOperativos)
             {
                 //println(""+song.idSistemaO+"\t"+song.idDistro+"\t"+song.nombreDistro+"\t"+ song.arquitectura+"\t"+song.fileManager)
@@ -250,7 +244,7 @@ fun createDistribucion(arraySistemaOp: ArrayList<SistemaOp>, idSistemaOList: Int
                 element.sistemasOperativos.add(Distribucion(idSistemaOLt, 1, nombreDistribucion, arquitect, convertStringToDate(fechaLanz)))
 
             } else {
-                // Si no está vacía, añade una nueva Canción con el id de la última canción incrementado en 1.
+                // Si no está vacía, añade una nueva  con el id de la última  incrementado en 1.
                 element.sistemasOperativos.add(Distribucion(idSistemaOLt, element.sistemasOperativos.get(element.sistemasOperativos.size - 1).idDistro +1, nombreDistribucion, arquitect, convertStringToDate(fechaLanz)))
             }
             println("%-10s%-10s%-30s%-20s%-10s".format("IdSistOp", "IdDistro", "NombreDistro", "Arquitectura", "FechaLanzamiento"))
@@ -263,21 +257,18 @@ fun createDistribucion(arraySistemaOp: ArrayList<SistemaOp>, idSistemaOList: Int
 }
 
 
-// Define la función modificarCancion con tres parámetros: un ArrayList de Playlist, un id de playlist y un id de canción.
 fun UpdateDistribucion(arraySistemaOp: ArrayList<SistemaOp>, idSistemaOList: Int, idDistribucion:Int)
 {
     println("Update distribucion")
 
-    // Almacena el id de la idSistemaOList en una nueva variable. Esto parece redundante porque podrías usar idPlaylst directamente.
+    // Almacena el id de la idSistemaOList en una nueva variable
     var idSistemaOLt = idSistemaOList
 
-    // Itera sobre cada elemento de arrayPlaylist.
     for (element in arraySistemaOp) {
 
         // Si idSo actual coincide con idSistemaOLt, entra al bloque.
         if (element.idSo==idSistemaOLt) {
 
-            // Itera sobre cada distribucion en la lista de distribuciones de la playlist actual.
             for (dist in element.sistemasOperativos){
 
                 // Si idDistro coincide con idDistribucion, entra al bloque.
@@ -302,7 +293,6 @@ fun deleteDistribucion(arraySistemaOp: ArrayList<SistemaOp>, idSystemasOList: In
 {
     println("borrar distribucion")
 
-    // Asigna el valor de idSong a idPlaylst, parece que es un error y se debería omitir esta línea.
     var idSistemasOList= idDistribucion
 
     // Itera sobre cada elemento de arraarraySistemaOp
@@ -366,7 +356,7 @@ fun saveFile(arraySistemaOp: ArrayList<SistemaOp>){
 }
 
 fun readFile(arraySistemaOp: ArrayList<SistemaOp>){
-    // Crear un objeto FileReader para leer el archivo 'Playlists.txt'.
+    // Crear un objeto FileReader para leer el archivo .txt
     val fr = FileReader("C:/Users/escritorio.virtual15/Documents/AppMobiles/quichimbo-cancino-marcos-antonio-mov-com/Tasks/Homework1/src/main/resources/Outputs/systems_distros.txt")
 
     // Variable para almacenar el texto del archivo.
@@ -399,18 +389,18 @@ fun readFile(arraySistemaOp: ArrayList<SistemaOp>){
         // Separar cada línea en sus respectivos campos.
         var (idOs, nombreOs, versionOs, continua, sistemasOperativos)=elemntosArchive[i].split("|")
 
-        // Crear una lista de distribuciones separando el campo de canciones por comas.
+        // Crear una lista de distribuciones separando el campo de distribuciones por comas.
         var distribuciones=ArrayList<String>((sistemasOperativos.substring(1,sistemasOperativos.length-1)).split(","))
 
         // Crear una lista de objetos Distribucion.
         var distros=ArrayList<Distribucion>()
 
-        // Si hay al menos una canción en la línea.
+        // Si hay al menos una distro en la línea.
         if(distribuciones[0].length>0){
-            // Iterar sobre cada canción.
+            // Iterar sobre cada distro.
             for(distribucion in distribuciones) {
-                // Separar la información de la canción en sus respectivos campos.
-                var (idSistemaO, idDistro, nombreDistro, arquitectura, fechaLanz) = distribucion.split(";")
+                // Separar la información de la distro en sus respectivos campos.
+                var (idSistemaO, idDistro, nombreDistro, arquitectura, fechaLanz) = distribucion.split("|")
 
                 // Remover espacios en blanco del idSistemaO.
                 idSistemaO=idSistemaO.replace("\\s".toRegex(),"")
@@ -422,7 +412,6 @@ fun readFile(arraySistemaOp: ArrayList<SistemaOp>){
                 distros.add(distro)
             }
         } else {
-            // Imprimir una línea vacía si no hay canciones.
             println("")
         }
 
@@ -465,7 +454,7 @@ class SistemaOp(
     var sistemasOperativos: ArrayList<Distribucion>  = arrayListOf<Distribucion>()
 ) {
     override fun toString(): String {
-        return "IdSistemaOp: $idSo| NombreSistemaOp: $nombreSo| VersionSistemaOp: $versionSo| DescontinuadoSistemaOp: $continua| Distros: ${sistemasOperativos.toString()}\n"
+        return "$idSo|$nombreSo|$versionSo|$continua|${sistemasOperativos.toString()}\n"
     }
 }
 
@@ -477,7 +466,8 @@ class Distribucion(
     var releaseDate:Date
 ) {
     override fun toString(): String {
-       return "IdSitemaOp: $idSistemaO; IdDistro: $idDistro; NombreDistro: $nombreDistro; ArquitecturaDistro: $arquitectura; FechaLanzamiento: $releaseDate"
+       //return "IdSO: $idSistemaO; IdDistro: $idDistro; NombreDistro: $nombreDistro; ArquitecturaDistro: $arquitectura; FLanzamientoDistro: $releaseDate"
+        return "$idSistemaO|$idDistro|$nombreDistro|$arquitectura|$releaseDate"
     }
 }
 
