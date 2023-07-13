@@ -1,0 +1,1 @@
+IdSistemaOp: 1| NombreSistemaOp: Ubuntu| VersionSistemaOp: 20.04| DescontinuadoSistemaOp: false| Distros: [IdSitemaOp: 1; IdDistro: 1; NombreDistro: Xubuntu; ArquitecturaDistro: x86; FechaLanzamiento: Thu Jul 13 00:00:00 ECT 2023]

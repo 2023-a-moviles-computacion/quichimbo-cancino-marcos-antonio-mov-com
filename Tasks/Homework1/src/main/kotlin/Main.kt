@@ -1,25 +1,24 @@
 import java.io.*
+import java.text.SimpleDateFormat
+import java.util.Date
 import kotlin.collections.ArrayList
-// La función principal del programa.
-fun main() {
-    // Crea un ArrayList de Playlist para almacenar las playlists.
-    var arraySistemaOps : ArrayList<SistemaOp> = arrayListOf<SistemaOp>()
 
-    // Crea un ArrayList de Int para almacenar los índices de las farmacias.
-    var arrFarmIndex:ArrayList<Int> = arrayListOf<Int>()
+fun main() {
+    // Crea un ArrayList de SistemaOp para almacenar las SistemasOp.
+    var arraySistemaOps : ArrayList<SistemaOp> = arrayListOf<SistemaOp>()
 
     // Lee los datos de archivo y los carga en el ArrayList de Playlist.
     readFile(arraySistemaOps)
 
     // Inicia un bucle do-while para mostrar el menú al usuario.
     do {
-        println("FREE MUSIC PLAYER\n")
-        println("1. Listar Playlist\n" +
-                "2. Crear Playlist\n" +
-                "3. Editar Playlist\n" +
-                "4. Borrar Playlist\n"+
-                "5. Ingresar a Playlist\n"+
-                "6. Regresar al inicio")
+        println("Operative Systems History\n")
+        println("1. Listar Sistemas Operativos\n" +
+                "2. Insertar Sistema Operativo\n" +
+                "3. Actualizar Sistema Operativo\n" +
+                "4. Delete Sistema Operativo\n"+
+                "5. Ingresar a un Sistema Operativo\n"+
+                "6. Guardar y salir")
 
         // Lee la opción seleccionada por el usuario.
         var opcion= readln()
@@ -27,80 +26,80 @@ fun main() {
         // Utiliza una estructura when para ejecutar el código correspondiente según la opción seleccionada.
         when (opcion) {
             "1" -> {
-                // Si la opción es 1, llama a la función printPlayLt para imprimir la lista de playlists.
-                printPlayLt(arraySistemaOps)
+                // Si la opción es 1, llama a la función printSistemaOLst para imprimir la lista de sistemasOperativos.
+                printSistemaOLst(arraySistemaOps)
             }
             "2" -> {
-                // Si la opción es 2, permite al usuario crear una nueva playlist.
+                // Si la opción es 2, permite al usuario crear un nuevo So.
                 var continuar = "y"
                 do {
-                    crearPlaylist(arraySistemaOps)
-                    printPlayLt(arraySistemaOps)
+                    createSistemaOp(arraySistemaOps)
+                    printSistemaOLst(arraySistemaOps)
                     println("Seguir insertando? y/n")
-                    continuar = readLine()!!
+                    continuar = readln()
                 } while (continuar == "y")
             }
             "3" -> {
-                // Si la opción es 3, permite al usuario modificar una playlist existente.
-                modificarPlaylist(arraySistemaOps)
-                printPlayLt(arraySistemaOps)
+                // Si la opción es 3, permite al usuario modificar un SistOp existente.
+                updteSistemaO(arraySistemaOps)
+                printSistemaOLst(arraySistemaOps)
             }
             "4" -> {
-                // Si la opción es 4, permite al usuario borrar una playlist existente.
-                borrarPlaylist(arraySistemaOps)
-                printPlayLt(arraySistemaOps)
+                // Si la opción es 4, permite al usuario borrar  un SistOp existente.
+                deleteSistemaO(arraySistemaOps)
+                printSistemaOLst(arraySistemaOps)
             }
             "5" -> {
-                // Si la opción es 5, permite al usuario ingresar a una playlist seleccionada.
-                printPlayLt(arraySistemaOps)
-                println("Seleccione el ID de la playlist: ")
-                var idPlt = readln().toInt()
+                // Si la opción es 5, permite al usuario ingresar un SistOp seleccionado.
+                printSistemaOLst(arraySistemaOps)
+                println("Seleccione el ID del Sistema Operativo")
+                var idEnterSistemaO = readln().toInt()
                 do {
-                    printnombrePlaylist(arraySistemaOps,idPlt)
+                    printNombreSistemaOp(arraySistemaOps,idEnterSistemaO)
                     println(
-                        "1. Listar Canciones\n" +
-                                "2. Insertar canción\n" +
-                                "3. Modificar datos de la canción\n" +
-                                "4. Borrar canción\n" +
+                                "1. Listar Distribuciones\n" +
+                                "2. Insertar Distribucion\n" +
+                                "3. Actualizar Distribucion\n" +
+                                "4. Eliminar Distribucion\n" +
                                 "5. Salir"
                     )
-                    var opcionSong = readln()
-                    when (opcionSong) {
+                    var opcionDistro = readln()
+                    when (opcionDistro) {
                         "1" -> {
-                            // Si la opción es 1, muestra la lista de canciones de la playlist seleccionada.
-                            printCancion(arraySistemaOps, idPlt)
+                            // Si la opción es 1, muestra la lista de distribuciones del sistema operativo seleccionado
+                            printDistribucion(arraySistemaOps, idEnterSistemaO)
                         }
                         "2" -> {
-                            // Si la opción es 2, permite al usuario insertar una nueva canción en la playlist.
+                            // Si la opción es 2, permite al usuario insertar una nueva distribución en ese sistema operativo.
                             var continuar = "y"
                             do {
-                                insertarCancion(arraySistemaOps, idPlt)
+                                createDistribucion(arraySistemaOps, idEnterSistemaO)
                                 //printCancion(arrayPlaylist, idPlt)
                                 println("Seguir insertando? y/n")
                                 continuar = readln()
                             }while (continuar=="y")
                         }
                         "3" -> {
-                            // Si la opción es 3, permite al usuario modificar los datos de una canción existente.
-                            println("Seleccione el ID de la canción: ")
-                            var idSong = readln().toInt()
-                            modificarCancion(arraySistemaOps, idPlt,idSong)
-                            printCancion(arraySistemaOps, idPlt)
+                            // Si la opción es 3, permite al usuario modificar una distribucion.
+                            println("Seleccione el ID de la Distribucion: ")
+                            var idDistro = readln().toInt()
+                            UpdateDistribucion(arraySistemaOps, idEnterSistemaO,idDistro)
+                            printDistribucion(arraySistemaOps, idEnterSistemaO)
                         }
                         "4" -> {
-                            // Si la opción es 4, permite al usuario borrar una canción existente.
-                            println("Seleccione el ID de la canción: ")
-                            var idSong = readln().toInt()
-                            borrarCancion(arraySistemaOps, idPlt,idSong)
-                            printCancion(arraySistemaOps, idPlt)
+                            // Si la opción es 4, permite al usuario borrar una distro.
+                            println("Seleccione el ID de la Distribucion: ")
+                            var idDistro = readln().toInt()
+                            deleteDistribucion(arraySistemaOps, idEnterSistemaO,idDistro)
+                            printDistribucion(arraySistemaOps, idEnterSistemaO)
                         }
                         else -> {
                             // Si la opción es diferente de 1, 2, 3, 4 o 5, se muestra el mensaje de despedida.
-                            println("Adios")
+                            println("Ninguna de las opciones ha sido seleccionada - Adios")
                             break
                         }
                     }
-                } while (opcionSong!="5")
+                } while (opcionDistro!="5")
             }
             else -> {
                 // Si la opción es diferente de 1, 2, 3, 4 o 5, se muestra el mensaje de despedida.
@@ -114,252 +113,183 @@ fun main() {
     saveFile(arraySistemaOps)
 }
 
-// Define la función crearPlaylist que permite insertar una nueva Playlist.
-// Recibe como parámetro un ArrayList de Playlist.
-fun crearPlaylist(arraySistemaOp:ArrayList<SistemaOp>){ // insertar playlist
+fun createSistemaOp(arraySistemaOp:ArrayList<SistemaOp>){ // insertar
 
-    // Solicita al usuario que ingrese el nombre de la Playlist.
-    println("Ingrese el nombre de la Playlist")
-    var nombre= readln()
-
-    // Solicita al usuario que ingrese la descripción de la Playlist.
-    println("Ingrese la descripcion")
-    var descripcion= readln()
-
-    // Solicita al usuario que indique si desea insertar una foto para la Playlist.
-    println("Insertar foto? (s/n)")
-    var fotoptionS= readln()
+    println("Ingrese el nombre del Sistema Operativo")
+    var nombreSistemaO= readln()
+    println("Ingrese la version")
+    var versionSo= readln().toDouble()
+    println("Sistema Operativo descontinuado? (s/n)")
+    var contSistemaO= readln()
 
     // Convierte la respuesta del usuario a un valor booleano utilizando la función deStringaBoolean.
-    var foto = deStringaBoolean(fotoptionS)
+    var cont = deStringaBoolean(contSistemaO)
 
-    // Comprueba si el ArrayList de Playlist está vacío.
+    // Comprueba si el ArrayList de SistemaOp está vacío.
     if(arraySistemaOp.isEmpty()){
-        // Si está vacío, agrega la primera Playlist con ID 1 al ArrayList.
-        arraySistemaOp.add(SistemaOp(1,nombre,
-            descripcion, foto, arrayListOf<Distribucion>()) )
+        // Si está vacío, agrega el primer SistemaOperativo con ID 1 al ArrayList.
+        arraySistemaOp.add(SistemaOp(1,nombreSistemaO,
+            versionSo, cont, arrayListOf<Distribucion>()) )
     }else{
-        // Si no está vacío, agrega una nueva Playlist al ArrayList con un ID calculado.
-        // El ID se obtiene sumando 1 al ID de la última Playlist en el ArrayList.
-        arraySistemaOp.add(SistemaOp(arraySistemaOp.get(arraySistemaOp.size - 1).idSo +1,nombre,
-            descripcion, foto, arrayListOf<Distribucion>()) )
+        // Si no está vacío, agrega un nuevo SistemaOp al ArrayList con un ID calculado.
+        // El ID se obtiene sumando 1 al ID del ultimo SistemaOp en el ArrayList.
+        arraySistemaOp.add(SistemaOp(arraySistemaOp.get(arraySistemaOp.size - 1).idSo +1,nombreSistemaO,
+            versionSo, cont, arrayListOf<Distribucion>()) )
     }
 }
 
-// Define la función borrarPlaylist que permite eliminar una Playlist.
-// Recibe como parámetro un ArrayList de Playlist.
-fun borrarPlaylist(arrayPLaylist:ArrayList<SistemaOp>){ // b
+fun deleteSistemaO(arraySistemaOp:ArrayList<SistemaOp>){
 
-    // Solicita al usuario que seleccione el ID de la Playlist a eliminar.
-    println("Eliminar Playlist :seleccionar ID: ")
-    var idPborrar= readln().toInt()
+    println("Eliminar Sistema Operativo :seleccionar ID: ")
+    var idToDelete= readln().toInt()
 
-    // Itera sobre cada elemento en el ArrayList de Playlist.
-    for (element in arrayPLaylist) {
-        // Comprueba si el ID de la Playlist coincide con el ID seleccionado.
-        if (element.idSo==idPborrar) {
+    // Itera sobre cada elemento en el ArrayList de arraySistemaOp.
+    for (element in arraySistemaOp) {
+        if (element.idSo==idToDelete) {
             // Imprime el índice de la Playlist en el ArrayList.
-            println("el index:"+arrayPLaylist.indexOf(element))
+            println("el index:"+arraySistemaOp.indexOf(element))
 
-            // Elimina la Playlist del ArrayList utilizando su índice.
-            arrayPLaylist.removeAt(arrayPLaylist.indexOf(element))
-
-            // Sale del bucle una vez que se ha eliminado la Playlist.
+            // Elimina el SitemaOp del ArrayList utilizando su índice.
+            arraySistemaOp.removeAt(arraySistemaOp.indexOf(element))
             break
         }
     }
 }
 
+fun updteSistemaO(arraySistemaOp: ArrayList<SistemaOp>) {
 
-// Define la función modificarPlaylist que permite actualizar una Playlist existente.
-// Recibe como parámetro un ArrayList de Playlist.
-fun modificarPlaylist(arraySistemaOp: ArrayList<SistemaOp>) { // UPdate
+    println("Seleccione el ID del Sistema Operativo")
+    var idToUpdate= readln().toInt()
 
-    // Solicita al usuario que seleccione el ID de la Playlist a modificar.
-    println("Seleccione el ID de la Playlist")
-    var idPmodificar= readln().toInt()
-
-    // Itera sobre cada elemento en el ArrayList de Playlist.
+    // Itera sobre cada elemento en el ArrayList de arraySistemaOp.
     for (element in arraySistemaOp) {
-        // Comprueba si el ID de la Playlist coincide con el ID seleccionado.
-        if (element.idSo==idPmodificar) {
-            // Solicita al usuario que ingrese el nuevo nombre de la Playlist.
-            println("Ingrese el nombre de la Playlist")
-            var nombre= readln()
+        // Comprueba si el ID del sistemaO coincide con el ID seleccionado.
+        if (element.idSo==idToUpdate) {
+            println("Ingrese nuevo nombre del Sistema Operativo")
+            var upNombreSistemO= readln()
+            println("Ingrese nueva version del Sistema Operativo")
+            var upVersionSisteO= readln().toDouble()
+            println("Sistema Opertivo Descontinuado (s/n)")
+            var upContSisteO= readln()
 
-            // Solicita al usuario que ingrese la nueva descripción de la Playlist.
-            println("Ingrese la descripcion")
-            var descripcion= readln()
+            var cont = deStringaBoolean(upContSisteO)
 
-            // Solicita al usuario que indique si desea insertar una foto (s/n).
-            println("Insertar foto? (s/n)")
-            var fotoptionS= readln()
-
-            // Convierte la respuesta del usuario a un valor booleano utilizando la función deStringaBoolean.
-            var foto = deStringaBoolean(fotoptionS)
-
-            // Actualiza los valores de la Playlist con los nuevos valores ingresados.
-            // Utiliza el índice de la Playlist en el ArrayList para reemplazar el elemento existente.
-            arraySistemaOp.set(arraySistemaOp.indexOf(element),SistemaOp(element.idSo,nombre,
-                descripcion, foto,element.sistemasOperativos))
+            // Actualiza los valores del SitemaO con los nuevos valores ingresados.
+            // Utiliza el índice de la SitemaO en el ArrayList para reemplazar el elemento existente.
+            arraySistemaOp.set(arraySistemaOp.indexOf(element),SistemaOp(element.idSo,upNombreSistemO,
+                upVersionSisteO, cont,element.sistemasOperativos))
         }
     }
 }
 
+fun printSistemaOLst(arraySistemaOp: ArrayList<SistemaOp>){
 
-// Define la función printPlayLt que imprime las Playlist disponibles
-// Recibe como parámetro un ArrayList de Playlist.
-fun printPlayLt(arraySistemaOp: ArrayList<SistemaOp>){
-
-    // Imprime los nombres de las columnas del registro de Playlist.
-    println("%-4s%-20s%-30s%-20s%-10s".format("ID", "Nombre", "Descripcion", "Foto", "Canciones"))
-
-
-
-    // Itera sobre cada playlist en arrayPlaylist.
+    println("%-4s%-20s%-30s%-20s%-10s".format("ID", "Nombre", "Arquitectura", "Descontinuado", "Distribuciones"))
+    // Itera sobre cada playlist en arraySistemaOp.
     for (playt in arraySistemaOp)
     {
-        // Imprime los detalles de cada Playlist: id, nombre, foto y canciones.
-        // Nota que en este código no imprime la descripción a pesar de tenerla en los nombres de las columnas.
-        println("%-4d%-20s%-30s%-20s%-10s".format(playt.idSo,playt.nombreSo,playt.versioinSo
+         println("%-4d%-20s%-30s%-20s%-10s".format(playt.idSo,playt.nombreSo,playt.versionSo
                 ,playt.continua,playt.sistemasOperativos))
     }
 }
 
+fun printNombreSistemaOp(arraySistemaOp: ArrayList<SistemaOp>, idSistemaOList: Int){
 
-// Define la función printnombrePlaylist que imprime el nombre de una Playlist específica
-// Recibe como parámetros un ArrayList de Playlist y un id de playlist.
-fun printnombrePlaylist(arraySistemaOp: ArrayList<SistemaOp>, idPlaylst: Int){
+    var idSistemaOLst= idSistemaOList
 
-    // Asigna el valor de idPlaylst a una nueva variable. Esto parece redundante porque podrías usar idPlaylst directamente.
-    var idPlayLt= idPlaylst
-
-    // Itera sobre cada elemento en arrayPlaylist.
+    // Itera sobre cada elemento en arraySistemaOp.
     for (element in arraySistemaOp) {
-
-        // Si el id de la playlist actual coincide con idPlayLt, entra al bloque.
-        if (element.idSo == idPlayLt) {
-
-            // Imprime el nombre de la Playlist en mayúsculas.
-            println("PLAYLIST " + element.nombreSo.uppercase())
+        if (element.idSo == idSistemaOLst) {
+            println("SISTEMA OPERATIVO: " + element.nombreSo.uppercase())
         }
     }
 }
 
 
-// Define la función printCancion que imprime las canciones de una Playlist específica, recibe como parámetros un ArrayList de Playlist y un id de playlist.
-fun printCancion(arraySistemaOp: ArrayList<SistemaOp>, idPlaylst: Int){
+//imprime las distros de un sistemaOp, recibe como parámetros un ArrayList de SistemaOp y un id de sistemaO.
+fun printDistribucion(arraySistemaOp: ArrayList<SistemaOp>, idSistemaOList: Int){
 
-    // Asigna el valor de idPlaylst a una nueva variable. Esto parece redundante porque podrías usar idPlaylst directamente.
-    var idPlayLt= idPlaylst
+    var idSistemaOLst= idSistemaOList
 
-    // Itera sobre cada elemento en arrayPlaylist.
+    // Itera sobre cada elemento en arraySistemaOp.
     for (element in arraySistemaOp) {
-
-        // Si el id de la playlist actual coincide con idPlayLt, entra al bloque.
-        if (element.idSo==idPlayLt) {
-
+        if (element.idSo==idSistemaOLst) {
             // Imprime el nombre de la Playlist en mayúsculas.
             println("PLAYLIST " + element.nombreSo.uppercase())
-
-            // Imprime los títulos de las columnas para las canciones.
-            println("\nIDP\tID\tNombre\tArtista\tGenero\n")
+            //println("\nIDP\tID\tNombre\tArtista\tGenero\n")
+            println("%-4s%-4s%-20s%-20s%-20s".format("IDSistemaOp", "IDDistro", "NombreDistro", "Arquitectura", "FechaLanzamiento"))
 
             // Itera sobre cada canción en la lista de canciones de la playlist actual.
             for (song in element.sistemasOperativos)
             {
-                // Imprime los detalles de cada canción.
-                println(""+song.idSistemaO+"\t"+song.idDistro+"\t"+song.nombreDistro+"\t"+ song.arquitectura+"\t"+song.fileManager)
+                //println(""+song.idSistemaO+"\t"+song.idDistro+"\t"+song.nombreDistro+"\t"+ song.arquitectura+"\t"+song.fileManager)
+                println("%-4d%-4d%-20s%-20s%-20s".format(song.idSistemaO, song.idDistro, song.nombreDistro, song.arquitectura, song.releaseDate))
             }
         }}
 }
 
-// Define la función insertarCancion con dos parámetros: un ArrayList de Playlist y un id de playlist.
-fun insertarCancion(arraySistemaOp: ArrayList<SistemaOp>, idPlaylst: Int){
-    // Imprime un mensaje indicando que la operación es para insertar una canción.
-    println("Insertar cancion")
+fun createDistribucion(arraySistemaOp: ArrayList<SistemaOp>, idSistemaOList: Int){
+    println("Insertar distribucion")
 
-    // Almacena el id de la Playlist en una nueva variable. Esto parece redundante porque podrías usar idPlaylst directamente.
-    var idPlayLt= idPlaylst
+    var idSistemaOLt= idSistemaOList
 
-    // Itera sobre cada elemento de arrayPlaylist.
+    // Itera sobre cada elemento de arraySistemaOp.
     for (element in arraySistemaOp) {
 
-        // Si el id de la playlist actual coincide con idPlayLt, entra al bloque.
-        if (element.idSo==idPlayLt) {
+        if (element.idSo==idSistemaOLt) {
+            println("Ingrese el nombre de la Distribucion: ")
+            var nombreDistribucion = readln()
+            println("Ingrese el nombre de la arquitectura: ")
+            var arquitect = readln()
+            println("Ingrese fecha de lanzamiento: 2023-07-13")
+            var fechaLanz = readln()
 
-            // Solicita al usuario que ingrese el nombre de la canción.
-            println("Ingrese el nombre de la cancion: ")
-            var nombreCancion = readln()
-
-            // Solicita al usuario que ingrese el nombre del artista.
-            println("Ingrese el nombre del artista: ")
-            var artista = readln()
-
-            // Solicita al usuario que ingrese el género.
-            println("Ingrese el genero: ")
-            var genero = readln()
-
-            // Verifica si la lista de canciones de la playlist actual está vacía.
+            // Verifica si la lista de distribuciones de sistemaOlist actual está vacía.
             if(element.sistemasOperativos.isEmpty()) {
-
-                // Si está vacía, añade una nueva Canción con el id de canción 1.
-                element.sistemasOperativos.add(Distribucion(idPlayLt, 1, nombreCancion, artista, genero))
+                // Si está vacía, añade una nueva distribucion con el id 1.
+                element.sistemasOperativos.add(Distribucion(idSistemaOLt, 1, nombreDistribucion, arquitect, convertStringToDate(fechaLanz)))
 
             } else {
-
                 // Si no está vacía, añade una nueva Canción con el id de la última canción incrementado en 1.
-                element.sistemasOperativos.add(Distribucion(idPlayLt, element.sistemasOperativos.get(element.sistemasOperativos.size - 1).idDistro +1, nombreCancion, artista, genero))
+                element.sistemasOperativos.add(Distribucion(idSistemaOLt, element.sistemasOperativos.get(element.sistemasOperativos.size - 1).idDistro +1, nombreDistribucion, arquitect, convertStringToDate(fechaLanz)))
             }
-
-            // Imprime los títulos de las columnas de las canciones.
-            println("%-4s%-4s%-30s%-20s%-10s".format("IDP", "ID", "Nombre", "Artista", "Genero"))
-
-            // Itera sobre cada canción en la lista de canciones de la playlist actual.
-            for (song in element.sistemasOperativos)
+            println("%-10s%-10s%-30s%-20s%-10s".format("IdSistOp", "IdDistro", "NombreDistro", "Arquitectura", "FechaLanzamiento"))
+            // Itera sobre cada distribucion en la lista de distribuciones de la sistemasOperativos actual.
+            for (dist in element.sistemasOperativos)
             {
-                // Imprime los detalles de cada canción.
-                println("%-4d%-4d%-30s%-20s%-10s".format(song.idSistemaO,song.idDistro,song.nombreDistro,song.arquitectura,song.fileManager))
+                println("%-10s%-10s%-30s%-20s%-10s".format(dist.idSistemaO,dist.idDistro,dist.nombreDistro,dist.arquitectura,dist.releaseDate))
             }
         }}
 }
 
 
 // Define la función modificarCancion con tres parámetros: un ArrayList de Playlist, un id de playlist y un id de canción.
-fun modificarCancion(arraySistemaOp: ArrayList<SistemaOp>, idPlaylst: Int, idSong:Int)
+fun UpdateDistribucion(arraySistemaOp: ArrayList<SistemaOp>, idSistemaOList: Int, idDistribucion:Int)
 {
-    // Imprime un mensaje indicando que la operación es para modificar un medicamento.
-    println("modificar medicamento")
+    println("Update distribucion")
 
-    // Almacena el id de la Playlist en una nueva variable. Esto parece redundante porque podrías usar idPlaylst directamente.
-    var idPlayLt = idPlaylst
+    // Almacena el id de la idSistemaOList en una nueva variable. Esto parece redundante porque podrías usar idPlaylst directamente.
+    var idSistemaOLt = idSistemaOList
 
     // Itera sobre cada elemento de arrayPlaylist.
     for (element in arraySistemaOp) {
 
-        // Si el id de la playlist actual coincide con idPlayLt, entra al bloque.
-        if (element.idSo==idPlayLt) {
+        // Si idSo actual coincide con idSistemaOLt, entra al bloque.
+        if (element.idSo==idSistemaOLt) {
 
-            // Itera sobre cada canción en la lista de canciones de la playlist actual.
-            for (song in element.sistemasOperativos){
+            // Itera sobre cada distribucion en la lista de distribuciones de la playlist actual.
+            for (dist in element.sistemasOperativos){
 
-                // Si el id de la canción actual coincide con idSong, entra al bloque.
-                if (song.idDistro==idSong){
-
-                    // Solicita al usuario que ingrese el nuevo nombre de la canción.
-                    println("Ingrese el nombre de la cancion: ")
-                    var nombreCancion = readln()
-
-                    // Solicita al usuario que ingrese el nombre del artista.
-                    println("Ingrese el nombre del artista: ")
-                    var artista = readln()
-
-                    // Solicita al usuario que ingrese el género.
-                    println("Ingrese el genero: ")
-                    var genero = readln()
-
-                    // Modifica la canción en el ArrayList de canciones de la playlist con los nuevos valores ingresados por el usuario.
-                    element.sistemasOperativos.set(element.sistemasOperativos.indexOf(song),Distribucion(idPlayLt, idSong , nombreCancion, artista, genero))
+                // Si idDistro coincide con idDistribucion, entra al bloque.
+                if (dist.idDistro==idDistribucion){
+                    println("Ingrese el nombre de la distribucion: ")
+                    var nombreDistribucion = readln()
+                    println("Ingrese la arquitectura ")
+                    var arquitect = readln()
+                    println("Ingrese fecha de lanzameinto: 2023-07-13 ")
+                    var fechaLaz = readln()
+                    // Modifica la distribucion en el ArrayList de distribuciones de la sistemaoList con los nuevos valores ingresados por el usuario.
+                    element.sistemasOperativos.set(element.sistemasOperativos.indexOf(dist),Distribucion(idSistemaOLt, idDistribucion , nombreDistribucion, arquitect, convertStringToDate(fechaLaz)))
                 }
             }
         }
@@ -367,31 +297,30 @@ fun modificarCancion(arraySistemaOp: ArrayList<SistemaOp>, idPlaylst: Int, idSon
 }
 
 
-// Define la función borrarCancion con tres parámetros: un ArrayList de Playlist, un id de playlist y un id de canción.
-fun borrarCancion(arraySistemaOp: ArrayList<SistemaOp>, idPlaylst: Int, idSong:Int)
+// Define la función con tres parámetros.
+fun deleteDistribucion(arraySistemaOp: ArrayList<SistemaOp>, idSystemasOList: Int, idDistribucion:Int)
 {
-    // Imprime un mensaje indicando que la operación es para borrar un medicamento.
-    println("borrar medicamento")
+    println("borrar distribucion")
 
     // Asigna el valor de idSong a idPlaylst, parece que es un error y se debería omitir esta línea.
-    var idPlaylst= idSong
+    var idSistemasOList= idDistribucion
 
-    // Itera sobre cada elemento de arrayPlaylist.
+    // Itera sobre cada elemento de arraarraySistemaOp
     for (element in arraySistemaOp) {
 
-        // Si el id de la playlist actual coincide con idPlaylst, entra al bloque.
-        if (element.idSo==idPlaylst) {
+        // Si idSo actual coincide con idSistemasOList, entra al bloque.
+        if (element.idSo==idSistemasOList) {
 
-            // Itera sobre cada canción en la lista de canciones de la playlist actual.
+            // Itera sobre cada distribucion en la lista de distribuciones actual.
             for (song in element.sistemasOperativos){
 
-                // Si el id de la canción actual coincide con idSong, entra al bloque.
-                if (song.idDistro==idSong){
+                // Si idDistro coincide con idDistribucion, entra al bloque.
+                if (song.idDistro==idDistribucion){
 
-                    // Remueve la canción del ArrayList de canciones de la playlist.
+                    // Remueve la distribucion del ArrayList de distribuciones de la sistemasOperativos.
                     element.sistemasOperativos.removeAt(element.sistemasOperativos.indexOf(song))
 
-                    // Rompe el ciclo de canciones ya que se encontró y eliminó la canción.
+                    // Rompe el ciclo
                     break
                 }
             }
@@ -402,7 +331,7 @@ fun borrarCancion(arraySistemaOp: ArrayList<SistemaOp>, idPlaylst: Int, idSong:I
 
 fun saveFile(arraySistemaOp: ArrayList<SistemaOp>){
     // Se define la ruta y el nombre del archivo a guardar.
-    val nombre="src/main/resources/Outputs/systems_distros.txt"
+    val nombre="C:/Users/escritorio.virtual15/Documents/AppMobiles/quichimbo-cancino-marcos-antonio-mov-com/Tasks/Homework1/src/main/resources/Outputs/systems_distros.txt"
 
     // Se crea un objeto de tipo File con el nombre y ruta especificados.
     val archivo=File(nombre)
@@ -438,7 +367,7 @@ fun saveFile(arraySistemaOp: ArrayList<SistemaOp>){
 
 fun readFile(arraySistemaOp: ArrayList<SistemaOp>){
     // Crear un objeto FileReader para leer el archivo 'Playlists.txt'.
-    val fr = FileReader("src/main/resources/Outputs/systems_distros.txt")
+    val fr = FileReader("C:/Users/escritorio.virtual15/Documents/AppMobiles/quichimbo-cancino-marcos-antonio-mov-com/Tasks/Homework1/src/main/resources/Outputs/systems_distros.txt")
 
     // Variable para almacenar el texto del archivo.
     var fileText = ""
@@ -481,13 +410,13 @@ fun readFile(arraySistemaOp: ArrayList<SistemaOp>){
             // Iterar sobre cada canción.
             for(distribucion in distribuciones) {
                 // Separar la información de la canción en sus respectivos campos.
-                var (idSistemaO, idDistro, nombreDistro, arquitectura, fileManager) = distribucion.split(";")
+                var (idSistemaO, idDistro, nombreDistro, arquitectura, fechaLanz) = distribucion.split(";")
 
                 // Remover espacios en blanco del idSistemaO.
                 idSistemaO=idSistemaO.replace("\\s".toRegex(),"")
 
                 // Crear un objeto Distribucion.
-                var distro =Distribucion(idOs.toInt(), idDistro.toInt(), nombreDistro, arquitectura, fileManager)
+                var distro =Distribucion(idOs.toInt(), idDistro.toInt(), nombreDistro, arquitectura, convertStringToDate(fechaLanz))
 
                 // Añadir la distro a la lista de distros.
                 distros.add(distro)
@@ -498,11 +427,18 @@ fun readFile(arraySistemaOp: ArrayList<SistemaOp>){
         }
 
         // Crear un objeto SistemaOp.
-        var sistemaOp= SistemaOp(idOs.toInt(),nombreOs, versionOs, deStringaBoolean(continua), distros)
+
+        var sistemaOp= SistemaOp(idOs.toInt(),nombreOs, versionOs.toDouble(), deStringaBoolean(continua), distros)
 
         // Añadir el sistemaOp al ArrayList de SistemaOp.
         arraySistemaOp.add(sistemaOp)
     }
+}
+
+fun convertStringToDate(dateString: String):Date{
+    val formatPattern = "yyyy-MM-dd"
+    val format = SimpleDateFormat(formatPattern)
+    return format.parse(dateString)
 }
 
 fun deStringaBoolean(contOptions: String?): Boolean{
@@ -524,12 +460,12 @@ fun deStringaBoolean(contOptions: String?): Boolean{
 class SistemaOp(
     var idSo:Int,
     var nombreSo:String,
-    var versioinSo:String,
+    var versionSo:Double,
     var continua: Boolean,
     var sistemasOperativos: ArrayList<Distribucion>  = arrayListOf<Distribucion>()
 ) {
     override fun toString(): String {
-        return "$idSo|$nombreSo|$versioinSo|$continua|${sistemasOperativos.toString()}\n"
+        return "IdSistemaOp: $idSo| NombreSistemaOp: $nombreSo| VersionSistemaOp: $versionSo| DescontinuadoSistemaOp: $continua| Distros: ${sistemasOperativos.toString()}\n"
     }
 }
 
@@ -538,10 +474,10 @@ class Distribucion(
     var idDistro: Int,
     var nombreDistro:String,
     var arquitectura: String,
-    var fileManager:String
+    var releaseDate:Date
 ) {
     override fun toString(): String {
-       return "$idSistemaO;$idDistro;$nombreDistro;$arquitectura;$fileManager"
+       return "IdSitemaOp: $idSistemaO; IdDistro: $idDistro; NombreDistro: $nombreDistro; ArquitecturaDistro: $arquitectura; FechaLanzamiento: $releaseDate"
     }
 }
 
