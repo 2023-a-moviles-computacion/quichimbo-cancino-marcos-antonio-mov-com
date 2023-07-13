@@ -1,2 +1,2 @@
-1|asd|2.0|false|[]
-2|asfad|2.3|true|[]
+1|Ubuntu|20.01|false|[]
+2|Widnows|10.0|false|[2|1|Home|64bits|Tue Jul 12 00:00:00 ECT 2022]
