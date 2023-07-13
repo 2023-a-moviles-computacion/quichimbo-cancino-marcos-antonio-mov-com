@@ -1,2 +1,4 @@
-1|Ubuntu|20.01|false|[]
-2|Widnows|10.0|false|[2|1|Home|64bits|Tue Jul 12 00:00:00 ECT 2022]
+1|Windows|7.0|true|[]
+2|Windows|10.0|false|[2|1|Windows 10 Home|x32bits|Sun Sep 23 00:00:00 ECT 2012, 2|2|Windows 10-Pro|x64bits|Mon May 28 00:00:00 ECT 2012]
+3|Ubuntu|12.04|false|[3|1|Xubuntu|x86_64|Fri Dec 23 00:00:00 ECT 2005]
+4|Kali linux|2022.4|false|[]

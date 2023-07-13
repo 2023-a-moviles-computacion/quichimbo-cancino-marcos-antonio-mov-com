@@ -1,7 +1,13 @@
-import java.io.*
+import java.awt.AWTException
+import java.awt.Robot
+import java.awt.event.InputEvent
+import java.io.BufferedWriter
+import java.io.File
+import java.io.FileReader
+import java.io.FileWriter
 import java.text.SimpleDateFormat
-import java.util.Date
-import kotlin.collections.ArrayList
+import java.util.*
+
 
 fun main() {
     // Crea un ArrayList de SistemaOp para almacenar las SistemasOp.
@@ -12,7 +18,7 @@ fun main() {
 
     // Inicia un bucle do-while para mostrar el menú al usuario.
     do {
-        println("Operative Systems History\n")
+        println("Operative Systems History")
         println("1. Listar Sistemas Operativos\n" +
                 "2. Insertar Sistema Operativo\n" +
                 "3. Actualizar Sistema Operativo\n" +
@@ -238,6 +244,7 @@ fun deStringaBoolean(contOptions: String?): Boolean{
         return false
     }
 }
+
 
 
 
