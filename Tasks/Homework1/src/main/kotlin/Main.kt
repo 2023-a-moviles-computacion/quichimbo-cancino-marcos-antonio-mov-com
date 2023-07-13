@@ -1,20 +1,15 @@
 import java.io.*
-import java.util.Date
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
-import java.time.temporal.TemporalQueries
-import java.util.*
 import kotlin.collections.ArrayList
 // La función principal del programa.
 fun main() {
     // Crea un ArrayList de Playlist para almacenar las playlists.
-    var arrayPlaylist : ArrayList<Playlist> = arrayListOf<Playlist>()
+    var arraySistemaOps : ArrayList<SistemaOp> = arrayListOf<SistemaOp>()
 
     // Crea un ArrayList de Int para almacenar los índices de las farmacias.
     var arrFarmIndex:ArrayList<Int> = arrayListOf<Int>()
 
     // Lee los datos de archivo y los carga en el ArrayList de Playlist.
-    leerArchivo(arrayPlaylist)
+    readFile(arraySistemaOps)
 
     // Inicia un bucle do-while para mostrar el menú al usuario.
     do {
@@ -24,7 +19,7 @@ fun main() {
                 "3. Editar Playlist\n" +
                 "4. Borrar Playlist\n"+
                 "5. Ingresar a Playlist\n"+
-                "6. Salir")
+                "6. Regresar al inicio")
 
         // Lee la opción seleccionada por el usuario.
         var opcion= readln()
@@ -33,35 +28,35 @@ fun main() {
         when (opcion) {
             "1" -> {
                 // Si la opción es 1, llama a la función printPlayLt para imprimir la lista de playlists.
-                printPlayLt(arrayPlaylist)
+                printPlayLt(arraySistemaOps)
             }
             "2" -> {
                 // Si la opción es 2, permite al usuario crear una nueva playlist.
                 var continuar = "y"
                 do {
-                    crearPlaylist(arrayPlaylist)
-                    printPlayLt(arrayPlaylist)
+                    crearPlaylist(arraySistemaOps)
+                    printPlayLt(arraySistemaOps)
                     println("Seguir insertando? y/n")
                     continuar = readLine()!!
                 } while (continuar == "y")
             }
             "3" -> {
                 // Si la opción es 3, permite al usuario modificar una playlist existente.
-                modificarPlaylist(arrayPlaylist)
-                printPlayLt(arrayPlaylist)
+                modificarPlaylist(arraySistemaOps)
+                printPlayLt(arraySistemaOps)
             }
             "4" -> {
                 // Si la opción es 4, permite al usuario borrar una playlist existente.
-                borrarPlaylist(arrayPlaylist)
-                printPlayLt(arrayPlaylist)
+                borrarPlaylist(arraySistemaOps)
+                printPlayLt(arraySistemaOps)
             }
             "5" -> {
                 // Si la opción es 5, permite al usuario ingresar a una playlist seleccionada.
-                printPlayLt(arrayPlaylist)
+                printPlayLt(arraySistemaOps)
                 println("Seleccione el ID de la playlist: ")
                 var idPlt = readln().toInt()
                 do {
-                    printnombrePlaylist(arrayPlaylist,idPlt)
+                    printnombrePlaylist(arraySistemaOps,idPlt)
                     println(
                         "1. Listar Canciones\n" +
                                 "2. Insertar canción\n" +
@@ -73,14 +68,14 @@ fun main() {
                     when (opcionSong) {
                         "1" -> {
                             // Si la opción es 1, muestra la lista de canciones de la playlist seleccionada.
-                            printCancion(arrayPlaylist, idPlt)
+                            printCancion(arraySistemaOps, idPlt)
                         }
                         "2" -> {
                             // Si la opción es 2, permite al usuario insertar una nueva canción en la playlist.
                             var continuar = "y"
                             do {
-                                insertarCancion(arrayPlaylist, idPlt)
-                                printCancion(arrayPlaylist, idPlt)
+                                insertarCancion(arraySistemaOps, idPlt)
+                                //printCancion(arrayPlaylist, idPlt)
                                 println("Seguir insertando? y/n")
                                 continuar = readln()
                             }while (continuar=="y")
@@ -89,15 +84,15 @@ fun main() {
                             // Si la opción es 3, permite al usuario modificar los datos de una canción existente.
                             println("Seleccione el ID de la canción: ")
                             var idSong = readln().toInt()
-                            modificarCancion(arrayPlaylist, idPlt,idSong)
-                            printCancion(arrayPlaylist, idPlt)
+                            modificarCancion(arraySistemaOps, idPlt,idSong)
+                            printCancion(arraySistemaOps, idPlt)
                         }
                         "4" -> {
                             // Si la opción es 4, permite al usuario borrar una canción existente.
                             println("Seleccione el ID de la canción: ")
                             var idSong = readln().toInt()
-                            borrarCancion(arrayPlaylist, idPlt,idSong)
-                            printCancion(arrayPlaylist, idPlt)
+                            borrarCancion(arraySistemaOps, idPlt,idSong)
+                            printCancion(arraySistemaOps, idPlt)
                         }
                         else -> {
                             // Si la opción es diferente de 1, 2, 3, 4 o 5, se muestra el mensaje de despedida.
@@ -116,12 +111,12 @@ fun main() {
     } while (opcion!="6")
 
     // Llama a la función saveFile para guardar los datos en archivo.
-    saveFile(arrayPlaylist)
+    saveFile(arraySistemaOps)
 }
 
 // Define la función crearPlaylist que permite insertar una nueva Playlist.
 // Recibe como parámetro un ArrayList de Playlist.
-fun crearPlaylist(arrayPlaylist:ArrayList<Playlist>){ // insertar playlist
+fun crearPlaylist(arraySistemaOp:ArrayList<SistemaOp>){ // insertar playlist
 
     // Solicita al usuario que ingrese el nombre de la Playlist.
     println("Ingrese el nombre de la Playlist")
@@ -139,21 +134,21 @@ fun crearPlaylist(arrayPlaylist:ArrayList<Playlist>){ // insertar playlist
     var foto = deStringaBoolean(fotoptionS)
 
     // Comprueba si el ArrayList de Playlist está vacío.
-    if(arrayPlaylist.isEmpty()){
+    if(arraySistemaOp.isEmpty()){
         // Si está vacío, agrega la primera Playlist con ID 1 al ArrayList.
-        arrayPlaylist.add(Playlist(1,nombre,
-            descripcion, foto, arrayListOf<Cancion>()) )
+        arraySistemaOp.add(SistemaOp(1,nombre,
+            descripcion, foto, arrayListOf<Distribucion>()) )
     }else{
         // Si no está vacío, agrega una nueva Playlist al ArrayList con un ID calculado.
         // El ID se obtiene sumando 1 al ID de la última Playlist en el ArrayList.
-        arrayPlaylist.add(Playlist(arrayPlaylist.get(arrayPlaylist.size - 1).idPlaylist +1,nombre,
-            descripcion, foto, arrayListOf<Cancion>()) )
+        arraySistemaOp.add(SistemaOp(arraySistemaOp.get(arraySistemaOp.size - 1).idSo +1,nombre,
+            descripcion, foto, arrayListOf<Distribucion>()) )
     }
 }
 
 // Define la función borrarPlaylist que permite eliminar una Playlist.
 // Recibe como parámetro un ArrayList de Playlist.
-fun borrarPlaylist(arrayPLaylist:ArrayList<Playlist>){ // b
+fun borrarPlaylist(arrayPLaylist:ArrayList<SistemaOp>){ // b
 
     // Solicita al usuario que seleccione el ID de la Playlist a eliminar.
     println("Eliminar Playlist :seleccionar ID: ")
@@ -162,7 +157,7 @@ fun borrarPlaylist(arrayPLaylist:ArrayList<Playlist>){ // b
     // Itera sobre cada elemento en el ArrayList de Playlist.
     for (element in arrayPLaylist) {
         // Comprueba si el ID de la Playlist coincide con el ID seleccionado.
-        if (element.idPlaylist==idPborrar) {
+        if (element.idSo==idPborrar) {
             // Imprime el índice de la Playlist en el ArrayList.
             println("el index:"+arrayPLaylist.indexOf(element))
 
@@ -178,16 +173,16 @@ fun borrarPlaylist(arrayPLaylist:ArrayList<Playlist>){ // b
 
 // Define la función modificarPlaylist que permite actualizar una Playlist existente.
 // Recibe como parámetro un ArrayList de Playlist.
-fun modificarPlaylist(arrayPlaylist: ArrayList<Playlist>) { // UPdate
+fun modificarPlaylist(arraySistemaOp: ArrayList<SistemaOp>) { // UPdate
 
     // Solicita al usuario que seleccione el ID de la Playlist a modificar.
     println("Seleccione el ID de la Playlist")
     var idPmodificar= readln().toInt()
 
     // Itera sobre cada elemento en el ArrayList de Playlist.
-    for (element in arrayPlaylist) {
+    for (element in arraySistemaOp) {
         // Comprueba si el ID de la Playlist coincide con el ID seleccionado.
-        if (element.idPlaylist==idPmodificar) {
+        if (element.idSo==idPmodificar) {
             // Solicita al usuario que ingrese el nuevo nombre de la Playlist.
             println("Ingrese el nombre de la Playlist")
             var nombre= readln()
@@ -205,8 +200,8 @@ fun modificarPlaylist(arrayPlaylist: ArrayList<Playlist>) { // UPdate
 
             // Actualiza los valores de la Playlist con los nuevos valores ingresados.
             // Utiliza el índice de la Playlist en el ArrayList para reemplazar el elemento existente.
-            arrayPlaylist.set(arrayPlaylist.indexOf(element),Playlist(element.idPlaylist,nombre,
-                descripcion, foto,element.songs))
+            arraySistemaOp.set(arraySistemaOp.indexOf(element),SistemaOp(element.idSo,nombre,
+                descripcion, foto,element.sistemasOperativos))
         }
     }
 }
@@ -214,71 +209,73 @@ fun modificarPlaylist(arrayPlaylist: ArrayList<Playlist>) { // UPdate
 
 // Define la función printPlayLt que imprime las Playlist disponibles
 // Recibe como parámetro un ArrayList de Playlist.
-fun printPlayLt(arrayPlaylist: ArrayList<Playlist>){
+fun printPlayLt(arraySistemaOp: ArrayList<SistemaOp>){
 
     // Imprime los nombres de las columnas del registro de Playlist.
-    println("|ID |\t |Nombre Playlist| \t |Descripcion |\t |Foto |\n" )
+    println("%-4s%-20s%-30s%-20s%-10s".format("ID", "Nombre", "Descripcion", "Foto", "Canciones"))
+
+
 
     // Itera sobre cada playlist en arrayPlaylist.
-    for (playt in arrayPlaylist)
+    for (playt in arraySistemaOp)
     {
         // Imprime los detalles de cada Playlist: id, nombre, foto y canciones.
         // Nota que en este código no imprime la descripción a pesar de tenerla en los nombres de las columnas.
-        println(""+playt.idPlaylist+"|\t"+playt.nombre+"|\t"+"|\t"+playt.descripcion+
-                "|\t"+playt.foto+"|\t"+playt.songs)
+        println("%-4d%-20s%-30s%-20s%-10s".format(playt.idSo,playt.nombreSo,playt.versioinSo
+                ,playt.continua,playt.sistemasOperativos))
     }
 }
 
 
 // Define la función printnombrePlaylist que imprime el nombre de una Playlist específica
 // Recibe como parámetros un ArrayList de Playlist y un id de playlist.
-fun printnombrePlaylist(arrayPlaylist: ArrayList<Playlist>,idPlaylst: Int){
+fun printnombrePlaylist(arraySistemaOp: ArrayList<SistemaOp>, idPlaylst: Int){
 
     // Asigna el valor de idPlaylst a una nueva variable. Esto parece redundante porque podrías usar idPlaylst directamente.
     var idPlayLt= idPlaylst
 
     // Itera sobre cada elemento en arrayPlaylist.
-    for (element in arrayPlaylist) {
+    for (element in arraySistemaOp) {
 
         // Si el id de la playlist actual coincide con idPlayLt, entra al bloque.
-        if (element.idPlaylist == idPlayLt) {
+        if (element.idSo == idPlayLt) {
 
             // Imprime el nombre de la Playlist en mayúsculas.
-            println("PLAYLIST " + element.nombre.uppercase())
+            println("PLAYLIST " + element.nombreSo.uppercase())
         }
     }
 }
 
 
 // Define la función printCancion que imprime las canciones de una Playlist específica, recibe como parámetros un ArrayList de Playlist y un id de playlist.
-fun printCancion(arrayPlaylist: ArrayList<Playlist>,idPlaylst: Int){
+fun printCancion(arraySistemaOp: ArrayList<SistemaOp>, idPlaylst: Int){
 
     // Asigna el valor de idPlaylst a una nueva variable. Esto parece redundante porque podrías usar idPlaylst directamente.
     var idPlayLt= idPlaylst
 
     // Itera sobre cada elemento en arrayPlaylist.
-    for (element in arrayPlaylist) {
+    for (element in arraySistemaOp) {
 
         // Si el id de la playlist actual coincide con idPlayLt, entra al bloque.
-        if (element.idPlaylist==idPlayLt) {
+        if (element.idSo==idPlayLt) {
 
             // Imprime el nombre de la Playlist en mayúsculas.
-            println("PLAYLIST " + element.nombre.uppercase())
+            println("PLAYLIST " + element.nombreSo.uppercase())
 
             // Imprime los títulos de las columnas para las canciones.
             println("\nIDP\tID\tNombre\tArtista\tGenero\n")
 
             // Itera sobre cada canción en la lista de canciones de la playlist actual.
-            for (song in element.songs)
+            for (song in element.sistemasOperativos)
             {
                 // Imprime los detalles de cada canción.
-                println(""+song.idPlyt+"\t"+song.idCancion+"\t"+song.nombreCancion+"\t"+ song.artista+"\t"+song.genero)
+                println(""+song.idSistemaO+"\t"+song.idDistro+"\t"+song.nombreDistro+"\t"+ song.arquitectura+"\t"+song.fileManager)
             }
         }}
 }
 
 // Define la función insertarCancion con dos parámetros: un ArrayList de Playlist y un id de playlist.
-fun insertarCancion(arrayPlaylist: ArrayList<Playlist>,idPlaylst: Int){
+fun insertarCancion(arraySistemaOp: ArrayList<SistemaOp>, idPlaylst: Int){
     // Imprime un mensaje indicando que la operación es para insertar una canción.
     println("Insertar cancion")
 
@@ -286,50 +283,50 @@ fun insertarCancion(arrayPlaylist: ArrayList<Playlist>,idPlaylst: Int){
     var idPlayLt= idPlaylst
 
     // Itera sobre cada elemento de arrayPlaylist.
-    for (element in arrayPlaylist) {
+    for (element in arraySistemaOp) {
 
         // Si el id de la playlist actual coincide con idPlayLt, entra al bloque.
-        if (element.idPlaylist==idPlayLt) {
+        if (element.idSo==idPlayLt) {
 
             // Solicita al usuario que ingrese el nombre de la canción.
             println("Ingrese el nombre de la cancion: ")
-            var nombreCancion = readLine()!!
+            var nombreCancion = readln()
 
             // Solicita al usuario que ingrese el nombre del artista.
             println("Ingrese el nombre del artista: ")
-            var artista = readLine()!!
+            var artista = readln()
 
             // Solicita al usuario que ingrese el género.
             println("Ingrese el genero: ")
-            var genero = readLine()!!
+            var genero = readln()
 
             // Verifica si la lista de canciones de la playlist actual está vacía.
-            if(element.songs.isEmpty()) {
+            if(element.sistemasOperativos.isEmpty()) {
 
                 // Si está vacía, añade una nueva Canción con el id de canción 1.
-                element.songs.add(Cancion(idPlayLt, 1, nombreCancion, artista, genero))
+                element.sistemasOperativos.add(Distribucion(idPlayLt, 1, nombreCancion, artista, genero))
 
             } else {
 
                 // Si no está vacía, añade una nueva Canción con el id de la última canción incrementado en 1.
-                element.songs.add(Cancion(idPlayLt, element.songs.get(element.songs.size - 1).idCancion +1, nombreCancion, artista, genero))
+                element.sistemasOperativos.add(Distribucion(idPlayLt, element.sistemasOperativos.get(element.sistemasOperativos.size - 1).idDistro +1, nombreCancion, artista, genero))
             }
 
             // Imprime los títulos de las columnas de las canciones.
-            println("\nIDP\tID\tNombre\tArtista\tGenero\n")
+            println("%-4s%-4s%-30s%-20s%-10s".format("IDP", "ID", "Nombre", "Artista", "Genero"))
 
             // Itera sobre cada canción en la lista de canciones de la playlist actual.
-            for (song in element.songs)
+            for (song in element.sistemasOperativos)
             {
                 // Imprime los detalles de cada canción.
-                println(""+song.idPlyt+"\t"+song.idCancion+"\t"+song.nombreCancion+"\t"+ song.artista+"\t"+song.genero)
+                println("%-4d%-4d%-30s%-20s%-10s".format(song.idSistemaO,song.idDistro,song.nombreDistro,song.arquitectura,song.fileManager))
             }
         }}
 }
 
 
 // Define la función modificarCancion con tres parámetros: un ArrayList de Playlist, un id de playlist y un id de canción.
-fun modificarCancion(arrayPlaylist: ArrayList<Playlist>,idPlaylst: Int,idSong:Int)
+fun modificarCancion(arraySistemaOp: ArrayList<SistemaOp>, idPlaylst: Int, idSong:Int)
 {
     // Imprime un mensaje indicando que la operación es para modificar un medicamento.
     println("modificar medicamento")
@@ -338,16 +335,16 @@ fun modificarCancion(arrayPlaylist: ArrayList<Playlist>,idPlaylst: Int,idSong:In
     var idPlayLt = idPlaylst
 
     // Itera sobre cada elemento de arrayPlaylist.
-    for (element in arrayPlaylist) {
+    for (element in arraySistemaOp) {
 
         // Si el id de la playlist actual coincide con idPlayLt, entra al bloque.
-        if (element.idPlaylist==idPlayLt) {
+        if (element.idSo==idPlayLt) {
 
             // Itera sobre cada canción en la lista de canciones de la playlist actual.
-            for (song in element.songs){
+            for (song in element.sistemasOperativos){
 
                 // Si el id de la canción actual coincide con idSong, entra al bloque.
-                if (song.idCancion==idSong){
+                if (song.idDistro==idSong){
 
                     // Solicita al usuario que ingrese el nuevo nombre de la canción.
                     println("Ingrese el nombre de la cancion: ")
@@ -362,7 +359,7 @@ fun modificarCancion(arrayPlaylist: ArrayList<Playlist>,idPlaylst: Int,idSong:In
                     var genero = readln()
 
                     // Modifica la canción en el ArrayList de canciones de la playlist con los nuevos valores ingresados por el usuario.
-                    element.songs.set(element.songs.indexOf(song),Cancion(idPlayLt, idSong , nombreCancion, artista, genero))
+                    element.sistemasOperativos.set(element.sistemasOperativos.indexOf(song),Distribucion(idPlayLt, idSong , nombreCancion, artista, genero))
                 }
             }
         }
@@ -371,7 +368,7 @@ fun modificarCancion(arrayPlaylist: ArrayList<Playlist>,idPlaylst: Int,idSong:In
 
 
 // Define la función borrarCancion con tres parámetros: un ArrayList de Playlist, un id de playlist y un id de canción.
-fun borrarCancion(arrayPlaylist: ArrayList<Playlist>,idPlaylst: Int,idSong:Int)
+fun borrarCancion(arraySistemaOp: ArrayList<SistemaOp>, idPlaylst: Int, idSong:Int)
 {
     // Imprime un mensaje indicando que la operación es para borrar un medicamento.
     println("borrar medicamento")
@@ -380,19 +377,19 @@ fun borrarCancion(arrayPlaylist: ArrayList<Playlist>,idPlaylst: Int,idSong:Int)
     var idPlaylst= idSong
 
     // Itera sobre cada elemento de arrayPlaylist.
-    for (element in arrayPlaylist) {
+    for (element in arraySistemaOp) {
 
         // Si el id de la playlist actual coincide con idPlaylst, entra al bloque.
-        if (element.idPlaylist==idPlaylst) {
+        if (element.idSo==idPlaylst) {
 
             // Itera sobre cada canción en la lista de canciones de la playlist actual.
-            for (song in element.songs){
+            for (song in element.sistemasOperativos){
 
                 // Si el id de la canción actual coincide con idSong, entra al bloque.
-                if (song.idCancion==idSong){
+                if (song.idDistro==idSong){
 
                     // Remueve la canción del ArrayList de canciones de la playlist.
-                    element.songs.removeAt(element.songs.indexOf(song))
+                    element.sistemasOperativos.removeAt(element.sistemasOperativos.indexOf(song))
 
                     // Rompe el ciclo de canciones ya que se encontró y eliminó la canción.
                     break
@@ -403,9 +400,9 @@ fun borrarCancion(arrayPlaylist: ArrayList<Playlist>,idPlaylst: Int,idSong:Int)
 }
 
 
-fun saveFile(arrayPlaylist: ArrayList<Playlist>){
+fun saveFile(arraySistemaOp: ArrayList<SistemaOp>){
     // Se define la ruta y el nombre del archivo a guardar.
-    val nombre="out/Archivos/Playlists.txt"
+    val nombre="src/main/resources/Outputs/systems_distros.txt"
 
     // Se crea un objeto de tipo File con el nombre y ruta especificados.
     val archivo=File(nombre)
@@ -424,8 +421,8 @@ fun saveFile(arrayPlaylist: ArrayList<Playlist>){
     // Se inicializa una variable salida de tipo String vacía.
     var salida:String=""
 
-    // Itera a través del array de playlists, convierte cada elemento a String y lo añade a la variable salida.
-    for(element in arrayPlaylist){
+    // Itera a través del array de arraySistemaOp, convierte cada elemento a String y lo añade a la variable salida.
+    for(element in arraySistemaOp){
         salida+=("${element.toString()}")
     }
 
@@ -439,9 +436,9 @@ fun saveFile(arrayPlaylist: ArrayList<Playlist>){
     bufferedWriter.close()
 }
 
-fun leerArchivo(arrayPlaylist: ArrayList<Playlist>){
+fun readFile(arraySistemaOp: ArrayList<SistemaOp>){
     // Crear un objeto FileReader para leer el archivo 'Playlists.txt'.
-    val fr = FileReader("out/Archivos/Playlists.txt")
+    val fr = FileReader("src/main/resources/Outputs/systems_distros.txt")
 
     // Variable para almacenar el texto del archivo.
     var fileText = ""
@@ -471,50 +468,50 @@ fun leerArchivo(arrayPlaylist: ArrayList<Playlist>){
     // Iterar a través de cada línea en el ArrayList.
     for(i in 0..count-1){
         // Separar cada línea en sus respectivos campos.
-        var (idPlaylist, nombre, descripcion, foto, songs)=elemntosArchive[i].split("|")
+        var (idOs, nombreOs, versionOs, continua, sistemasOperativos)=elemntosArchive[i].split("|")
 
-        // Crear una lista de canciones separando el campo de canciones por comas.
-        var canciones=ArrayList<String>((songs.substring(1,songs.length-1)).split(","))
+        // Crear una lista de distribuciones separando el campo de canciones por comas.
+        var distribuciones=ArrayList<String>((sistemasOperativos.substring(1,sistemasOperativos.length-1)).split(","))
 
-        // Crear una lista de objetos Cancion.
-        var rolitas=ArrayList<Cancion>()
+        // Crear una lista de objetos Distribucion.
+        var distros=ArrayList<Distribucion>()
 
         // Si hay al menos una canción en la línea.
-        if(canciones[0].length>0){
+        if(distribuciones[0].length>0){
             // Iterar sobre cada canción.
-            for(cancion in canciones) {
+            for(distribucion in distribuciones) {
                 // Separar la información de la canción en sus respectivos campos.
-                var (idPlyt, idCancion, nombreCan, artistaCan, generoCan) = cancion.split(";")
+                var (idSistemaO, idDistro, nombreDistro, arquitectura, fileManager) = distribucion.split(";")
 
-                // Remover espacios en blanco del idPlyt.
-                idPlyt=idPlyt.replace("\\s".toRegex(),"")
+                // Remover espacios en blanco del idSistemaO.
+                idSistemaO=idSistemaO.replace("\\s".toRegex(),"")
 
-                // Crear un objeto Cancion.
-                var rolas =Cancion(idPlaylist.toInt(), idCancion.toInt(), nombreCan, artistaCan, generoCan)
+                // Crear un objeto Distribucion.
+                var distro =Distribucion(idOs.toInt(), idDistro.toInt(), nombreDistro, arquitectura, fileManager)
 
-                // Añadir la canción a la lista de canciones.
-                rolitas.add(rolas)
+                // Añadir la distro a la lista de distros.
+                distros.add(distro)
             }
         } else {
             // Imprimir una línea vacía si no hay canciones.
             println("")
         }
 
-        // Crear un objeto Playlist.
-        var playlist= Playlist(idPlaylist.toInt(),nombre, descripcion, deStringaBoolean(foto), rolitas)
+        // Crear un objeto SistemaOp.
+        var sistemaOp= SistemaOp(idOs.toInt(),nombreOs, versionOs, deStringaBoolean(continua), distros)
 
-        // Añadir la playlist al ArrayList de playlists.
-        arrayPlaylist.add(playlist)
+        // Añadir el sistemaOp al ArrayList de SistemaOp.
+        arraySistemaOp.add(sistemaOp)
     }
 }
 
-fun deStringaBoolean(fotoptionS: String?): Boolean{
+fun deStringaBoolean(contOptions: String?): Boolean{
     // Convierte la cadena de entrada a mayúsculas.
     // Kotlin maneja la posibilidad de null de forma segura con el operador '?'.
-    var datoM= fotoptionS?.uppercase()
+    var cont= contOptions?.uppercase()
 
     // Si el dato convertido a mayúsculas es "S", la función devuelve 'true'.
-    if (datoM=="S"){
+    if (cont=="S"){
         return true
     }
     // En caso contrario (es decir, si el dato no es "S" o es null), la función devuelve 'false'.
@@ -524,27 +521,27 @@ fun deStringaBoolean(fotoptionS: String?): Boolean{
 }
 
 
-class Playlist(
-    var idPlaylist:Int,
-    var nombre:String,
-    var descripcion:String,
-    var foto: Boolean,
-    var songs: ArrayList<Cancion>  = arrayListOf<Cancion>()
+class SistemaOp(
+    var idSo:Int,
+    var nombreSo:String,
+    var versioinSo:String,
+    var continua: Boolean,
+    var sistemasOperativos: ArrayList<Distribucion>  = arrayListOf<Distribucion>()
 ) {
     override fun toString(): String {
-        return "$idPlaylist|$nombre|$descripcion|$foto|${songs.toString()}\n"
+        return "$idSo|$nombreSo|$versioinSo|$continua|${sistemasOperativos.toString()}\n"
     }
 }
 
-class Cancion(
-    var idPlyt:Int,
-    var idCancion: Int,
-    var nombreCancion:String,
-    var artista: String,
-    var genero:String
+class Distribucion(
+    var idSistemaO:Int,
+    var idDistro: Int,
+    var nombreDistro:String,
+    var arquitectura: String,
+    var fileManager:String
 ) {
     override fun toString(): String {
-       return "$idPlyt;$idCancion;$nombreCancion;$artista;$genero"
+       return "$idSistemaO;$idDistro;$nombreDistro;$arquitectura;$fileManager"
     }
 }
 
