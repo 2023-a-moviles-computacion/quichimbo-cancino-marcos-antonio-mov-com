@@ -5,11 +5,19 @@ import java.time.format.DateTimeFormatter
 import java.time.temporal.TemporalQueries
 import java.util.*
 import kotlin.collections.ArrayList
+// La función principal del programa.
 fun main() {
+    // Crea un ArrayList de Playlist para almacenar las playlists.
     var arrayPlaylist : ArrayList<Playlist> = arrayListOf<Playlist>()
+
+    // Crea un ArrayList de Int para almacenar los índices de las farmacias.
     var arrFarmIndex:ArrayList<Int> = arrayListOf<Int>()
+
+    // Lee los datos de archivo y los carga en el ArrayList de Playlist.
     leerArchivo(arrayPlaylist)
-    do{
+
+    // Inicia un bucle do-while para mostrar el menú al usuario.
+    do {
         println("FREE MUSIC PLAYER\n")
         println("1. Listar Playlist\n" +
                 "2. Crear Playlist\n" +
@@ -17,12 +25,18 @@ fun main() {
                 "4. Borrar Playlist\n"+
                 "5. Ingresar a Playlist\n"+
                 "6. Salir")
-        var opcion= readLine()!!
+
+        // Lee la opción seleccionada por el usuario.
+        var opcion= readln()
+
+        // Utiliza una estructura when para ejecutar el código correspondiente según la opción seleccionada.
         when (opcion) {
             "1" -> {
+                // Si la opción es 1, llama a la función printPlayLt para imprimir la lista de playlists.
                 printPlayLt(arrayPlaylist)
             }
             "2" -> {
+                // Si la opción es 2, permite al usuario crear una nueva playlist.
                 var continuar = "y"
                 do {
                     crearPlaylist(arrayPlaylist)
@@ -32,53 +46,61 @@ fun main() {
                 } while (continuar == "y")
             }
             "3" -> {
+                // Si la opción es 3, permite al usuario modificar una playlist existente.
                 modificarPlaylist(arrayPlaylist)
                 printPlayLt(arrayPlaylist)
             }
             "4" -> {
+                // Si la opción es 4, permite al usuario borrar una playlist existente.
                 borrarPlaylist(arrayPlaylist)
                 printPlayLt(arrayPlaylist)
             }
             "5" -> {
+                // Si la opción es 5, permite al usuario ingresar a una playlist seleccionada.
                 printPlayLt(arrayPlaylist)
-                println("Seleccione el ID de la farmacia: ")
-                var idPlt = readLine()!!.toInt()
+                println("Seleccione el ID de la playlist: ")
+                var idPlt = readln().toInt()
                 do {
                     printnombrePlaylist(arrayPlaylist,idPlt)
                     println(
                         "1. Listar Canciones\n" +
                                 "2. Insertar canción\n" +
                                 "3. Modificar datos de la canción\n" +
-                                "4. Borrar cancion\n" +
+                                "4. Borrar canción\n" +
                                 "5. Salir"
                     )
-                    var opcionSong = readLine()!!
+                    var opcionSong = readln()
                     when (opcionSong) {
                         "1" -> {
+                            // Si la opción es 1, muestra la lista de canciones de la playlist seleccionada.
                             printCancion(arrayPlaylist, idPlt)
                         }
                         "2" -> {
+                            // Si la opción es 2, permite al usuario insertar una nueva canción en la playlist.
                             var continuar = "y"
                             do {
                                 insertarCancion(arrayPlaylist, idPlt)
                                 printCancion(arrayPlaylist, idPlt)
                                 println("Seguir insertando? y/n")
-                                continuar = readLine()!!
+                                continuar = readln()
                             }while (continuar=="y")
                         }
                         "3" -> {
-                            println("Seleccione el ID de la cancion: ")
-                            var idSong = readLine()!!.toInt()
+                            // Si la opción es 3, permite al usuario modificar los datos de una canción existente.
+                            println("Seleccione el ID de la canción: ")
+                            var idSong = readln().toInt()
                             modificarCancion(arrayPlaylist, idPlt,idSong)
                             printCancion(arrayPlaylist, idPlt)
                         }
                         "4" -> {
-                            println("Seleccione el ID de la cancion: ")
-                            var idSong = readLine()!!.toInt()
+                            // Si la opción es 4, permite al usuario borrar una canción existente.
+                            println("Seleccione el ID de la canción: ")
+                            var idSong = readln().toInt()
                             borrarCancion(arrayPlaylist, idPlt,idSong)
                             printCancion(arrayPlaylist, idPlt)
                         }
                         else -> {
+                            // Si la opción es diferente de 1, 2, 3, 4 o 5, se muestra el mensaje de despedida.
                             println("Adios")
                             break
                         }
@@ -86,96 +108,175 @@ fun main() {
                 } while (opcionSong!="5")
             }
             else -> {
+                // Si la opción es diferente de 1, 2, 3, 4 o 5, se muestra el mensaje de despedida.
                 println("Adios")
                 break
             }
         }
-    }while (opcion!="6")
+    } while (opcion!="6")
+
+    // Llama a la función saveFile para guardar los datos en archivo.
     saveFile(arrayPlaylist)
 }
 
+// Define la función crearPlaylist que permite insertar una nueva Playlist.
+// Recibe como parámetro un ArrayList de Playlist.
 fun crearPlaylist(arrayPlaylist:ArrayList<Playlist>){ // insertar playlist
+
+    // Solicita al usuario que ingrese el nombre de la Playlist.
     println("Ingrese el nombre de la Playlist")
-    var nombre=readLine()!!
+    var nombre= readln()
+
+    // Solicita al usuario que ingrese la descripción de la Playlist.
     println("Ingrese la descripcion")
-    var descripcion=readLine()!!
+    var descripcion= readln()
+
+    // Solicita al usuario que indique si desea insertar una foto para la Playlist.
     println("Insertar foto? (s/n)")
-    var fotoptionS=readLine()!!
+    var fotoptionS= readln()
+
+    // Convierte la respuesta del usuario a un valor booleano utilizando la función deStringaBoolean.
     var foto = deStringaBoolean(fotoptionS)
 
+    // Comprueba si el ArrayList de Playlist está vacío.
     if(arrayPlaylist.isEmpty()){
+        // Si está vacío, agrega la primera Playlist con ID 1 al ArrayList.
         arrayPlaylist.add(Playlist(1,nombre,
             descripcion, foto, arrayListOf<Cancion>()) )
     }else{
+        // Si no está vacío, agrega una nueva Playlist al ArrayList con un ID calculado.
+        // El ID se obtiene sumando 1 al ID de la última Playlist en el ArrayList.
         arrayPlaylist.add(Playlist(arrayPlaylist.get(arrayPlaylist.size - 1).idPlaylist +1,nombre,
             descripcion, foto, arrayListOf<Cancion>()) )
     }
 }
 
+// Define la función borrarPlaylist que permite eliminar una Playlist.
+// Recibe como parámetro un ArrayList de Playlist.
 fun borrarPlaylist(arrayPLaylist:ArrayList<Playlist>){ // b
+
+    // Solicita al usuario que seleccione el ID de la Playlist a eliminar.
     println("Eliminar Playlist :seleccionar ID: ")
-    var idPborrar= readLine()!!.toInt()
+    var idPborrar= readln().toInt()
+
+    // Itera sobre cada elemento en el ArrayList de Playlist.
     for (element in arrayPLaylist) {
+        // Comprueba si el ID de la Playlist coincide con el ID seleccionado.
         if (element.idPlaylist==idPborrar) {
+            // Imprime el índice de la Playlist en el ArrayList.
             println("el index:"+arrayPLaylist.indexOf(element))
+
+            // Elimina la Playlist del ArrayList utilizando su índice.
             arrayPLaylist.removeAt(arrayPLaylist.indexOf(element))
+
+            // Sale del bucle una vez que se ha eliminado la Playlist.
             break
         }
     }
 }
 
-fun modificarPlaylist(arrayPlaylist: ArrayList<Playlist>){ // UPdate
+
+// Define la función modificarPlaylist que permite actualizar una Playlist existente.
+// Recibe como parámetro un ArrayList de Playlist.
+fun modificarPlaylist(arrayPlaylist: ArrayList<Playlist>) { // UPdate
+
+    // Solicita al usuario que seleccione el ID de la Playlist a modificar.
     println("Seleccione el ID de la Playlist")
-    var idPmodificar= readLine()!!.toInt()
+    var idPmodificar= readln().toInt()
+
+    // Itera sobre cada elemento en el ArrayList de Playlist.
     for (element in arrayPlaylist) {
+        // Comprueba si el ID de la Playlist coincide con el ID seleccionado.
         if (element.idPlaylist==idPmodificar) {
+            // Solicita al usuario que ingrese el nuevo nombre de la Playlist.
             println("Ingrese el nombre de la Playlist")
-            var nombre=readLine()!!
+            var nombre= readln()
+
+            // Solicita al usuario que ingrese la nueva descripción de la Playlist.
             println("Ingrese la descripcion")
-            var descripcion=readLine()!!
+            var descripcion= readln()
+
+            // Solicita al usuario que indique si desea insertar una foto (s/n).
             println("Insertar foto? (s/n)")
-            var fotoptionS=readLine()!!
+            var fotoptionS= readln()
+
+            // Convierte la respuesta del usuario a un valor booleano utilizando la función deStringaBoolean.
             var foto = deStringaBoolean(fotoptionS)
 
-            println("el index:"+arrayPlaylist.indexOf(element))
+            // Actualiza los valores de la Playlist con los nuevos valores ingresados.
+            // Utiliza el índice de la Playlist en el ArrayList para reemplazar el elemento existente.
             arrayPlaylist.set(arrayPlaylist.indexOf(element),Playlist(element.idPlaylist,nombre,
                 descripcion, foto,element.songs))
         }
     }
 }
 
-fun printPlayLt(arrayPlaylist: ArrayList<Playlist>){
-    println("ID\tNombre Playlist\tDescripcion\tFoto\n" )
 
+// Define la función printPlayLt que imprime las Playlist disponibles
+// Recibe como parámetro un ArrayList de Playlist.
+fun printPlayLt(arrayPlaylist: ArrayList<Playlist>){
+
+    // Imprime los nombres de las columnas del registro de Playlist.
+    println("|ID |\t |Nombre Playlist| \t |Descripcion |\t |Foto |\n" )
+
+    // Itera sobre cada playlist en arrayPlaylist.
     for (playt in arrayPlaylist)
     {
-        println(""+playt.idPlaylist+"\t"+playt.nombre+"\t"+
-                "\t"+playt.foto+"\t"+playt.songs)
+        // Imprime los detalles de cada Playlist: id, nombre, foto y canciones.
+        // Nota que en este código no imprime la descripción a pesar de tenerla en los nombres de las columnas.
+        println(""+playt.idPlaylist+"|\t"+playt.nombre+"|\t"+"|\t"+playt.descripcion+
+                "|\t"+playt.foto+"|\t"+playt.songs)
     }
 }
 
+
+// Define la función printnombrePlaylist que imprime el nombre de una Playlist específica
+// Recibe como parámetros un ArrayList de Playlist y un id de playlist.
 fun printnombrePlaylist(arrayPlaylist: ArrayList<Playlist>,idPlaylst: Int){
+
+    // Asigna el valor de idPlaylst a una nueva variable. Esto parece redundante porque podrías usar idPlaylst directamente.
     var idPlayLt= idPlaylst
+
+    // Itera sobre cada elemento en arrayPlaylist.
     for (element in arrayPlaylist) {
+
+        // Si el id de la playlist actual coincide con idPlayLt, entra al bloque.
         if (element.idPlaylist == idPlayLt) {
+
+            // Imprime el nombre de la Playlist en mayúsculas.
             println("PLAYLIST " + element.nombre.uppercase())
         }
     }
 }
 
-fun printCancion(arrayPlaylist: ArrayList<Playlist>,idPlaylst: Int){ //printMed
+
+// Define la función printCancion que imprime las canciones de una Playlist específica, recibe como parámetros un ArrayList de Playlist y un id de playlist.
+fun printCancion(arrayPlaylist: ArrayList<Playlist>,idPlaylst: Int){
+
+    // Asigna el valor de idPlaylst a una nueva variable. Esto parece redundante porque podrías usar idPlaylst directamente.
     var idPlayLt= idPlaylst
+
+    // Itera sobre cada elemento en arrayPlaylist.
     for (element in arrayPlaylist) {
+
+        // Si el id de la playlist actual coincide con idPlayLt, entra al bloque.
         if (element.idPlaylist==idPlayLt) {
+
+            // Imprime el nombre de la Playlist en mayúsculas.
             println("PLAYLIST " + element.nombre.uppercase())
+
+            // Imprime los títulos de las columnas para las canciones.
             println("\nIDP\tID\tNombre\tArtista\tGenero\n")
+
+            // Itera sobre cada canción en la lista de canciones de la playlist actual.
             for (song in element.songs)
             {
-                println(""+song.idPlyt+"\t"+song.idCancion+"\t"+song.nombreCancion+"\t"+
-                        song.artista+"\t"+song.genero)
+                // Imprime los detalles de cada canción.
+                println(""+song.idPlyt+"\t"+song.idCancion+"\t"+song.nombreCancion+"\t"+ song.artista+"\t"+song.genero)
             }
         }}
 }
+
 // Define la función insertarCancion con dos parámetros: un ArrayList de Playlist y un id de playlist.
 fun insertarCancion(arrayPlaylist: ArrayList<Playlist>,idPlaylst: Int){
     // Imprime un mensaje indicando que la operación es para insertar una canción.
