@@ -13,6 +13,7 @@ fun main(args: Array<String>) {
     // TIPOS DE VARIABLES
 
     //INMUTABLES (NO se reasignan "=")
+	//comentario solo para el commit 
     val inmutable: String = "Marcos"
     //inmutable = "Pedro" can not be reasigned
 
