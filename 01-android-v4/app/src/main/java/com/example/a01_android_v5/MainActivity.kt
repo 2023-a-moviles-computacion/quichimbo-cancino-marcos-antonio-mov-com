@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
             .setOnClickListener {
                 irActividad(BListView::class.java)
             }
-    }
+    }git
     fun irActividad(
         clase: Class <*>
     ){
