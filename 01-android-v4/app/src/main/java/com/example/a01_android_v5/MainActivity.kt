@@ -81,6 +81,7 @@ class MainActivity : AppCompatActivity() {
     }
     fun abrirActividadConParametros(
         clase: Class<*>
+    //clase 27 de junio
     ){
 
     }
