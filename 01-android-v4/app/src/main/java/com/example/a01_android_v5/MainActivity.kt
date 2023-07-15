@@ -84,7 +84,13 @@ class MainActivity : AppCompatActivity() {
         clase: Class<*>
     //clase 27 de junio
     ){
+    val intentExplitico = Intent(this,clase)
+        //enviar parametros (solo variables primitivas)
+        intentExplitico.putExtra("nombre", "adrian")
+        intentExplitico.putExtra("apellido", "Eguez")
+        intentExplitico.putExtra("edad",34)
 
+        callbackContenidoIntentExplicito.launch(intentExplitico)
     }
 
     fun irActividad(
