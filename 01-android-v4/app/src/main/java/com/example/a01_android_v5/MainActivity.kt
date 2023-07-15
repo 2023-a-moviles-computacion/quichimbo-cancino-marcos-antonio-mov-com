@@ -52,6 +52,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //base de datos sqlite
+        EBaseDeDatos.tablaEntrenador = ESqliteHelperEntrenador(this)
+
         //ESCUCHAR LOS EVENTOS CICLO VIDA LIST VIEW
         //MANDAR A LA ACTIVIDAD PERTINENT
 
