@@ -9,3 +9,4 @@ class BEntrenador(
         return "${nombre}-${description}"
     }
 }
+//hasta mim: 13
