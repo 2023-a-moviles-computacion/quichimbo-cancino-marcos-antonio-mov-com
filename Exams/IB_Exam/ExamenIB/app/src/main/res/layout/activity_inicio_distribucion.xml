@@ -16,11 +16,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_playlist_cancion_lista"
+        android:id="@+id/tv_sistemaOp_distro_lista"
         android:layout_width="316dp"
         android:layout_height="50dp"
         android:layout_marginTop="70dp"
-        android:text="Lista de Canciones"
+        android:text="Lista de distros"
         android:textColor="#000000"
         android:textSize="34sp"
         android:textStyle="bold"
@@ -36,12 +36,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Playlist: Temazos"
+        android:text="Sistema Op: Ubuntu"
         android:textColor="#090909"
-        app:layout_constraintEnd_toEndOf="@+id/tv_playlist_cancion_lista"
+        app:layout_constraintEnd_toEndOf="@+id/tv_sistemaOp_distro_lista"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_playlist_cancion_lista"
-        app:layout_constraintTop_toBottomOf="@+id/tv_playlist_cancion_lista" />
+        app:layout_constraintStart_toStartOf="@+id/tv_sistemaOp_distro_lista"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sistemaOp_distro_lista" />
 
     <Button
         android:id="@+id/btn_crear_distro2"
@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:backgroundTint="#023E8A"
-        android:text="Añadir Nueva Canción"
+        android:text="Añadir nueva distro"
         app:layout_constraintEnd_toEndOf="@+id/lv_distribuciones_lista"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="@+id/lv_distribuciones_lista"

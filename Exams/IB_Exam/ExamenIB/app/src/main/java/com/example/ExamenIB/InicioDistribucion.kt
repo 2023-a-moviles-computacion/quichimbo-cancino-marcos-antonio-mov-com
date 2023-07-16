@@ -109,7 +109,7 @@ class InicioDistribucion : AppCompatActivity() {
     ) {
         super.onCreateContextMenu(menu, v, menuInfo)
         val inflater = menuInflater
-        inflater.inflate(R.menu.menu_cancion, menu)
+        inflater.inflate(R.menu.menu_distro, menu)
         val info = menuInfo as AdapterView.AdapterContextMenuInfo
         val id = info.position
         itemS = id
