@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Sistema Op: Ubuntu"
+        android:text="Distribuciones del Sistema Op: Ubuntu"
         android:textColor="#090909"
         app:layout_constraintEnd_toEndOf="@+id/tv_sistemaOp_distro_lista"
         app:layout_constraintHorizontal_bias="0.0"
@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
         android:backgroundTint="#0077B6"
-        android:text="Volver"
+        android:text="Volver a Sistemas Op. "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/lv_distribuciones_lista"
         app:layout_constraintStart_toStartOf="@+id/lv_distribuciones_lista" />
