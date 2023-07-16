@@ -10,24 +10,25 @@
         android:id="@+id/btn_crear_nueva_sistemaO"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="96dp"
         android:backgroundTint="#023E8A"
         android:text="Crear  Sistema Operativo"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/lv_sistemaO_lista"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="@+id/lv_sistemaO_lista" />
 
     <ListView
         android:id="@+id/lv_sistemaO_lista"
         android:layout_width="320dp"
-        android:layout_height="400dp"
+        android:layout_height="317dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_crear_nueva_sistemaO"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_ListaSistemasOp"
-        app:layout_constraintVertical_bias="0.554" />
+        app:layout_constraintVertical_bias="0.292" />
 
     <TextView
         android:id="@+id/tv_ListaSistemasOp"

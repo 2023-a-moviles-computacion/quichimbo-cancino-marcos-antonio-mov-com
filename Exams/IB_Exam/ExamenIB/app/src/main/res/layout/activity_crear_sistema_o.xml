@@ -10,34 +10,33 @@
         android:id="@+id/tv_sistemaO_crear"
         android:layout_width="324dp"
         android:layout_height="46dp"
-        android:layout_marginTop="50dp"
         android:text="Crear Nuevo Sistema Op."
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.436"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.049" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txtIn_nombreSistemaO_editar2"
         android:layout_width="333dp"
-        android:layout_height="55dp"
+        android:layout_height="48dp"
         android:hint="Ejemplo: Windows"
         app:layout_constraintBottom_toTopOf="@+id/tv_DescripcionSistemaO"
         app:layout_constraintEnd_toEndOf="@+id/tv_NombreSistemaO"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tv_NombreSistemaO"
         app:layout_constraintTop_toBottomOf="@+id/tv_NombreSistemaO"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.611" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txtIn_descripcionSistemaO_editar"
         android:layout_width="333dp"
-        android:layout_height="55dp"
+        android:layout_height="48dp"
         android:layout_marginTop="4dp"
         android:hint="Ejemplo: All desktop propouse O.S"
         app:layout_constraintBottom_toTopOf="@+id/tv_fechaLanzSistemaO"
@@ -49,7 +48,7 @@
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txtIn_fechaLanzSistemaO_editar"
         android:layout_width="333dp"
-        android:layout_height="55dp"
+        android:layout_height="48dp"
         android:layout_marginTop="12dp"
         android:hint="Ejemplo: 1985"
         app:layout_constraintBottom_toTopOf="@+id/tv_fileManagerSistemaO"
@@ -62,7 +61,7 @@
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txtIn_fileManagerSistemaO_editar"
         android:layout_width="333dp"
-        android:layout_height="55dp"
+        android:layout_height="48dp"
         android:layout_marginTop="12dp"
         android:hint="Ejemplo: Gnome"
         app:layout_constraintBottom_toTopOf="@+id/tv_numVersionesSistemaO"
@@ -70,13 +69,13 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tv_fileManagerSistemaO"
         app:layout_constraintTop_toBottomOf="@+id/tv_fileManagerSistemaO"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.23" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txtIn_numeroVersionesSistemaO_editar"
         android:layout_width="333dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="28dp"
         android:hint="Ejemplo: 35"
         app:layout_constraintEnd_toEndOf="@+id/tv_numVersionesSistemaO"
         app:layout_constraintHorizontal_bias="0.0"
@@ -87,12 +86,12 @@
         android:id="@+id/tv_NombreSistemaO"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:text="Nombre del Sistema Op."
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_sistemaO_crear"
-        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tv_sistemaO_crear"
         app:layout_constraintTop_toBottomOf="@+id/tv_sistemaO_crear" />
 
@@ -105,10 +104,10 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintHorizontal_bias="0.131"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.255" />
+        app:layout_constraintVertical_bias="0.256" />
 
     <TextView
         android:id="@+id/tv_fechaLanzSistemaO"
@@ -119,7 +118,7 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.099"
+        app:layout_constraintHorizontal_bias="0.155"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.379" />
@@ -133,10 +132,10 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintHorizontal_bias="0.134"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.517" />
+        app:layout_constraintVertical_bias="0.519" />
 
     <TextView
         android:id="@+id/tv_numVersionesSistemaO"
@@ -147,16 +146,16 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintHorizontal_bias="0.164"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.665" />
+        app:layout_constraintVertical_bias="0.675" />
 
     <Button
         android:id="@+id/btn_guardar_cambios"
         android:layout_width="114dp"
         android:layout_height="41dp"
-        android:layout_marginBottom="108dp"
+        android:layout_marginBottom="96dp"
         android:backgroundTint="#023e8a"
         android:text="Crear"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -168,7 +167,7 @@
         android:id="@+id/btn_cancelar_editar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="32dp"
         android:backgroundTint="#0077B6"
         android:text="Cancelar"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -39,10 +39,10 @@
         android:text="Arquitectura"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintHorizontal_bias="0.089"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.268" />
+        app:layout_constraintVertical_bias="0.259" />
 
     <TextView
         android:id="@+id/tv_version_distro_editar"
@@ -51,10 +51,10 @@
         android:text="Version"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.097"
+        app:layout_constraintHorizontal_bias="0.085"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.422" />
+        app:layout_constraintVertical_bias="0.403" />
 
     <TextView
         android:id="@+id/tv_licencia_distro_editar"
@@ -63,10 +63,10 @@
         android:text="Licencia"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintHorizontal_bias="0.086"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.551" />
+        app:layout_constraintVertical_bias="0.544" />
 
     <TextView
         android:id="@+id/tv_fecha_lanz_distro_editar"
@@ -78,12 +78,12 @@
         app:layout_constraintHorizontal_bias="0.109"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.693" />
+        app:layout_constraintVertical_bias="0.683" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txtIn_nombreDistro_editar"
         android:layout_width="333dp"
-        android:layout_height="55dp"
+        android:layout_height="48dp"
         android:layout_marginTop="12dp"
         android:hint="Ejemplo: Windows 10"
         app:layout_constraintBottom_toTopOf="@+id/tv_arquitecturaDistro_editar"
@@ -96,7 +96,7 @@
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txtIn_arquitecturaDistro_editar"
         android:layout_width="333dp"
-        android:layout_height="55dp"
+        android:layout_height="48dp"
         android:layout_marginTop="12dp"
         android:hint="X86"
         app:layout_constraintBottom_toTopOf="@+id/tv_version_distro_editar"
@@ -109,7 +109,7 @@
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txtIn_versionDistro_editar"
         android:layout_width="333dp"
-        android:layout_height="55dp"
+        android:layout_height="48dp"
         android:layout_marginTop="16dp"
         android:hint="2"
         app:layout_constraintBottom_toTopOf="@+id/tv_licencia_distro_editar"
@@ -122,7 +122,7 @@
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txtIn_licenciaDistro_editar"
         android:layout_width="333dp"
-        android:layout_height="55dp"
+        android:layout_height="48dp"
         android:layout_marginTop="16dp"
         android:hint="Open GL"
         app:layout_constraintBottom_toTopOf="@+id/tv_fecha_lanz_distro_editar"
@@ -135,7 +135,7 @@
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txtIn_fechaLanzDistro_editar"
         android:layout_width="333dp"
-        android:layout_height="55dp"
+        android:layout_height="48dp"
         android:layout_marginTop="12dp"
         android:hint="2022"
         app:layout_constraintEnd_toEndOf="@+id/tv_fecha_lanz_distro_editar"
@@ -153,7 +153,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtIn_fechaLanzDistro_editar"
-        app:layout_constraintVertical_bias="0.074" />
+        app:layout_constraintVertical_bias="0.212" />
 
     <Button
         android:id="@+id/btn_cancelar_distribucion_editar"
@@ -166,6 +166,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtIn_fechaLanzDistro_editar"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.307" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
