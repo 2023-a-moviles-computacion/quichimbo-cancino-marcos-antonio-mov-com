@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditarSistemaO">
+
+    <TextView
+        android:id="@+id/tv_AnioCreacionP2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha de lanzamiento"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.138"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.417" />
+
+    <TextView
+        android:id="@+id/tv_fileManager_sistemaO_editar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="File Manager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.106"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.575" />
+
+    <TextView
+        android:id="@+id/tv_numeroVersiones_sistemaO_editar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Numero de versiones"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.717" />
+
+    <TextView
+        android:id="@+id/tv_sistemaO_editar"
+        android:layout_width="324dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="50dp"
+        android:text="Editar Sistema Op."
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.402"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tv_nombre_sistemaO_editar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre del Sistema Op."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.144" />
+
+    <TextView
+        android:id="@+id/tv_descripcion_sistemaO_editar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descripción"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.109"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.282" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtIn_nombreSistemaO_editar2"
+        android:layout_width="333dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:hint="Ubuntu"
+        app:layout_constraintBottom_toTopOf="@+id/tv_descripcion_sistemaO_editar"
+        app:layout_constraintEnd_toEndOf="@+id/tv_nombre_sistemaO_editar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_nombre_sistemaO_editar"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nombre_sistemaO_editar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtIn_descripcionSistemaO_editar2"
+        android:layout_width="333dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        android:hint="All propouse"
+        app:layout_constraintBottom_toTopOf="@+id/tv_AnioCreacionP2"
+        app:layout_constraintEnd_toEndOf="@+id/tv_descripcion_sistemaO_editar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_descripcion_sistemaO_editar"
+        app:layout_constraintTop_toBottomOf="@+id/tv_descripcion_sistemaO_editar"
+        app:layout_constraintVertical_bias="0.045" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtIn_fechaLanzSistemaO_editar2"
+        android:layout_width="333dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:hint="2006"
+        app:layout_constraintBottom_toTopOf="@+id/tv_fileManager_sistemaO_editar"
+        app:layout_constraintEnd_toEndOf="@+id/tv_AnioCreacionP2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_AnioCreacionP2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_AnioCreacionP2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtIn_fileManagerSistemaO_editar2"
+        android:layout_width="333dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:hint="Gnome"
+        app:layout_constraintBottom_toTopOf="@+id/tv_numeroVersiones_sistemaO_editar"
+        app:layout_constraintEnd_toEndOf="@+id/tv_fileManager_sistemaO_editar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_fileManager_sistemaO_editar"
+        app:layout_constraintTop_toBottomOf="@+id/tv_fileManager_sistemaO_editar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtIn_numeroVersionesSistemaO_editar2"
+        android:layout_width="333dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="24dp"
+        android:hint="18"
+        app:layout_constraintEnd_toEndOf="@+id/tv_numeroVersiones_sistemaO_editar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_numeroVersiones_sistemaO_editar"
+        app:layout_constraintTop_toBottomOf="@+id/tv_numeroVersiones_sistemaO_editar" />
+
+    <Button
+        android:id="@+id/btn_guardar_cambios2"
+        android:layout_width="119dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="76dp"
+        android:backgroundTint="#023E8A"
+        android:text="Guardar Cambios"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_cancelar_editar2"
+        android:layout_width="122dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#0077B6"
+        android:text="Cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

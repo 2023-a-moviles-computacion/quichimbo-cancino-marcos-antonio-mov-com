@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CrearDistribucion">
+
+    <TextView
+        android:id="@+id/tv_AnadirDistro"
+        android:layout_width="332dp"
+        android:layout_height="82dp"
+        android:text="Añadir Nueva Distro"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.367"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.038" />
+
+    <TextView
+        android:id="@+id/tv_nombre_distro_crear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Nombre de la distro"
+        app:layout_constraintEnd_toEndOf="@+id/tv_AnadirDistro"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toStartOf="@+id/tv_AnadirDistro"
+        app:layout_constraintTop_toBottomOf="@+id/tv_AnadirDistro" />
+
+    <TextView
+        android:id="@+id/tv_arquitectura_distro_crear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Arquitectura"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.105"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.32" />
+
+    <TextView
+        android:id="@+id/tv_version_distro_crear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Version"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.467" />
+
+    <TextView
+        android:id="@+id/tv_licencia_distro_crear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Licencia"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.605" />
+
+    <TextView
+        android:id="@+id/tv_fechaLanzDistro_crear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha de lanzamiento"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.738" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtIn_nombreDistro_crear"
+        android:layout_width="333dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="12dp"
+        android:hint="Ejemplo: Windows 10"
+        app:layout_constraintBottom_toTopOf="@+id/tv_arquitectura_distro_crear"
+        app:layout_constraintEnd_toEndOf="@+id/tv_nombre_distro_crear"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_nombre_distro_crear"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nombre_distro_crear"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtIn_arquitecturaDistro_crear"
+        android:layout_width="333dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:hint="Ejemplo: X86"
+        app:layout_constraintBottom_toTopOf="@+id/tv_version_distro_crear"
+        app:layout_constraintEnd_toEndOf="@+id/tv_arquitectura_distro_crear"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_arquitectura_distro_crear"
+        app:layout_constraintTop_toBottomOf="@+id/tv_arquitectura_distro_crear"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtIn_VersionDistro_crear"
+        android:layout_width="333dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:hint="Ejemplo: 2"
+        app:layout_constraintBottom_toTopOf="@+id/tv_licencia_distro_crear"
+        app:layout_constraintEnd_toEndOf="@+id/tv_version_distro_crear"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_version_distro_crear"
+        app:layout_constraintTop_toBottomOf="@+id/tv_version_distro_crear"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtIn_LicenciaDistro_crear"
+        android:layout_width="333dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="12dp"
+        android:hint="Ejemplo: OpenGL"
+        app:layout_constraintBottom_toTopOf="@+id/tv_fechaLanzDistro_crear"
+        app:layout_constraintEnd_toEndOf="@+id/tv_licencia_distro_crear"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_licencia_distro_crear"
+        app:layout_constraintTop_toBottomOf="@+id/tv_licencia_distro_crear"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtIn_fechaLanzamientoDistro_crear"
+        android:layout_width="333dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="4dp"
+        android:hint="Ejemplo: 2011"
+        app:layout_constraintEnd_toEndOf="@+id/tv_fechaLanzDistro_crear"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_fechaLanzDistro_crear"
+        app:layout_constraintTop_toBottomOf="@+id/tv_fechaLanzDistro_crear" />
+
+    <Button
+        android:id="@+id/btn_crear_distro"
+        android:layout_width="114dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#023E8A"
+        android:text="Añadir"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtIn_fechaLanzamientoDistro_crear"
+        app:layout_constraintVertical_bias="0.041" />
+
+    <Button
+        android:id="@+id/btn_cancelar_distribucion_crear"
+        android:layout_width="114dp"
+        android:layout_height="42dp"
+        android:backgroundTint="#0077B6"
+        android:text="Cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_crear_distro"
+        app:layout_constraintVertical_bias="0.428" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

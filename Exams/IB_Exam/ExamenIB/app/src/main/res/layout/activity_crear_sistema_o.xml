@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CrearSistemaO">
+
+    <TextView
+        android:id="@+id/tv_sistemaO_crear"
+        android:layout_width="324dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="50dp"
+        android:text="Crear Nuevo Sistema Op."
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.436"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtIn_nombreSistemaO_editar2"
+        android:layout_width="333dp"
+        android:layout_height="55dp"
+        android:hint="Ejemplo: Windows"
+        app:layout_constraintBottom_toTopOf="@+id/tv_DescripcionSistemaO"
+        app:layout_constraintEnd_toEndOf="@+id/tv_NombreSistemaO"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_NombreSistemaO"
+        app:layout_constraintTop_toBottomOf="@+id/tv_NombreSistemaO"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtIn_descripcionSistemaO_editar"
+        android:layout_width="333dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="4dp"
+        android:hint="Ejemplo: All desktop propouse O.S"
+        app:layout_constraintBottom_toTopOf="@+id/tv_fechaLanzSistemaO"
+        app:layout_constraintEnd_toEndOf="@+id/tv_DescripcionSistemaO"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_DescripcionSistemaO"
+        app:layout_constraintTop_toBottomOf="@+id/tv_DescripcionSistemaO" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtIn_fechaLanzSistemaO_editar"
+        android:layout_width="333dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="12dp"
+        android:hint="Ejemplo: 1985"
+        app:layout_constraintBottom_toTopOf="@+id/tv_fileManagerSistemaO"
+        app:layout_constraintEnd_toEndOf="@+id/tv_fechaLanzSistemaO"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_fechaLanzSistemaO"
+        app:layout_constraintTop_toBottomOf="@+id/tv_fechaLanzSistemaO"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtIn_fileManagerSistemaO_editar"
+        android:layout_width="333dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="12dp"
+        android:hint="Ejemplo: Gnome"
+        app:layout_constraintBottom_toTopOf="@+id/tv_numVersionesSistemaO"
+        app:layout_constraintEnd_toEndOf="@+id/tv_fileManagerSistemaO"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_fileManagerSistemaO"
+        app:layout_constraintTop_toBottomOf="@+id/tv_fileManagerSistemaO"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtIn_numeroVersionesSistemaO_editar"
+        android:layout_width="333dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:hint="Ejemplo: 35"
+        app:layout_constraintEnd_toEndOf="@+id/tv_numVersionesSistemaO"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_numVersionesSistemaO"
+        app:layout_constraintTop_toBottomOf="@+id/tv_numVersionesSistemaO" />
+
+    <TextView
+        android:id="@+id/tv_NombreSistemaO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Nombre del Sistema Op."
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_sistemaO_crear"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toStartOf="@+id/tv_sistemaO_crear"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sistemaO_crear" />
+
+    <TextView
+        android:id="@+id/tv_DescripcionSistemaO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descripción"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.255" />
+
+    <TextView
+        android:id="@+id/tv_fechaLanzSistemaO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha lanzamiento"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.099"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.379" />
+
+    <TextView
+        android:id="@+id/tv_fileManagerSistemaO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="File Manager"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.517" />
+
+    <TextView
+        android:id="@+id/tv_numVersionesSistemaO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Número de versiones"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.665" />
+
+    <Button
+        android:id="@+id/btn_guardar_cambios"
+        android:layout_width="114dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="108dp"
+        android:backgroundTint="#023e8a"
+        android:text="Crear"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_cancelar_editar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:backgroundTint="#0077B6"
+        android:text="Cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,31 +8,12 @@ class Distribucion(
     var releaseDate: Date
 ) {
     override fun toString(): String {
-        //return "IdSO: $idSistemaO; IdDistro: $idDistro; NombreDistro: $nombreDistro; ArquitecturaDistro: $arquitectura; FLanzamientoDistro: $releaseDate"
         return "$idSistemaO|$idDistro|$nombreDistro|$arquitectura|$releaseDate"
     }
 }
 
 
 //imprime las distros de un sistemaOp, recibe como parámetros un ArrayList de SistemaOp y un id de sistemaO.
-fun printDistribucion(arraySistemaOp: ArrayList<SistemaOp>, idSistemaOList: Int){
-
-    var idSistemaOLst= idSistemaOList
-
-    // Itera sobre cada elemento en arraySistemaOp.
-    for (element in arraySistemaOp) {
-        if (element.idSo==idSistemaOLst) {
-            println("Sistema Operativo " + element.nombreSo.uppercase())
-            println("%-4s%-4s%-20s%-20s%-20s".format("IDSistemaOp", "IDDistro", "NombreDistro", "Arquitectura", "FechaLanzamiento"))
-
-            for (song in element.sistemasOperativos)
-            {
-                //println(""+song.idSistemaO+"\t"+song.idDistro+"\t"+song.nombreDistro+"\t"+ song.arquitectura+"\t"+song.fileManager)
-                println("%-4d%-4d%-20s%-20s%-20s".format(song.idSistemaO, song.idDistro, song.nombreDistro, song.arquitectura, song.releaseDate))
-            }
-        }}
-}
-
 fun createDistribucion(arraySistemaOp: ArrayList<SistemaOp>, idSistemaOList: Int){
     println("Insertar distribucion")
 
@@ -113,13 +94,13 @@ fun deleteDistribucion(arraySistemaOp: ArrayList<SistemaOp>, idSystemasOList: In
         if (element.idSo==idSistemasOList) {
 
             // Itera sobre cada distribucion en la lista de distribuciones actual.
-            for (song in element.sistemasOperativos){
+            for (distro in element.sistemasOperativos){
 
                 // Si idDistro coincide con idDistribucion, entra al bloque.
-                if (song.idDistro==idDistribucion){
+                if (distro.idDistro==idDistribucion){
 
                     // Remueve la distribucion del ArrayList de distribuciones de la sistemasOperativos.
-                    element.sistemasOperativos.removeAt(element.sistemasOperativos.indexOf(song))
+                    element.sistemasOperativos.removeAt(element.sistemasOperativos.indexOf(distro))
 
                     // Rompe el ciclo
                     break
@@ -127,4 +108,21 @@ fun deleteDistribucion(arraySistemaOp: ArrayList<SistemaOp>, idSystemasOList: In
             }
         }
     }
+}
+fun printDistribucion(arraySistemaOp: ArrayList<SistemaOp>, idSistemaOList: Int){
+
+    var idSistemaOLst= idSistemaOList
+
+    // Itera sobre cada elemento en arraySistemaOp.
+    for (element in arraySistemaOp) {
+        if (element.idSo==idSistemaOLst) {
+            println("Sistema Operativo " + element.nombreSo.uppercase())
+            println("%-4s%-4s%-20s%-20s%-20s".format("IDSistemaOp", "IDDistro", "NombreDistro", "Arquitectura", "FechaLanzamiento"))
+
+            for (distro in element.sistemasOperativos)
+            {
+                //println(""+distro.idSistemaO+"\t"+distro.idDistro+"\t"+distro.nombreDistro+"\t"+ distro.arquitectura+"\t"+distro.fileManager)
+                println("%-4d%-4d%-20s%-20s%-20s".format(distro.idSistemaO, distro.idDistro, distro.nombreDistro, distro.arquitectura, distro.releaseDate))
+            }
+        }}
 }

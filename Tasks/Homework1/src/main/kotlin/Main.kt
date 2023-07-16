@@ -1,6 +1,3 @@
-import java.awt.AWTException
-import java.awt.Robot
-import java.awt.event.InputEvent
 import java.io.BufferedWriter
 import java.io.File
 import java.io.FileReader
@@ -182,12 +179,12 @@ fun readFile(arraySistemaOp: ArrayList<SistemaOp>){
     }
 
     // Separar el texto del archivo por nuevas líneas en un ArrayList.
-    var elemntosArchive=ArrayList<String>(fileText.split("\n"))
+    var itemsFile=ArrayList<String>(fileText.split("\n"))
 
     // Iterar a través de cada línea en el ArrayList.
     for(i in 0..count-1){
         // Separar cada línea en sus respectivos campos.
-        var (idOs, nombreOs, versionOs, continua, sistemasOperativos)=elemntosArchive[i].split("|")
+        var (idOs, nombreOs, versionOs, continua, sistemasOperativos)=itemsFile[i].split("|")
 
         // Crear una lista de distribuciones separando el campo de distribuciones por comas.
         var distribuciones=ArrayList<String>((sistemasOperativos.substring(1,sistemasOperativos.length-1)).split(","))

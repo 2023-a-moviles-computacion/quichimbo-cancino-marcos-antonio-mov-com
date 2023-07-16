@@ -36,7 +36,6 @@ fun createSistemaOp(arraySistemaOp:ArrayList<SistemaOp>){ // insertar
 }
 
 fun deleteSistemaO(arraySistemaOp:ArrayList<SistemaOp>){
-
     println("Eliminar Sistema Operativo :seleccionar ID: ")
     var idToDelete= readln().toInt()
 
@@ -89,7 +88,6 @@ fun printSistemaOLst(arraySistemaOp: ArrayList<SistemaOp>){
 }
 
 fun printNombreSistemaOp(arraySistemaOp: ArrayList<SistemaOp>, idSistemaOList: Int){
-
     var idSistemaOLst= idSistemaOList
 
     // Itera sobre cada elemento en arraySistemaOp.
