@@ -13,14 +13,14 @@
         android:theme="@style/Theme.ExamenIB"
         tools:targetApi="31">
         <activity
-            android:name=".InicioCancion"
+            android:name=".InicioDistribucion"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".EditarCancion"
+            android:name=".EditarDistribucion"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -34,7 +34,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".EditarPlaylist"
+            android:name=".EditarSistemaO"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

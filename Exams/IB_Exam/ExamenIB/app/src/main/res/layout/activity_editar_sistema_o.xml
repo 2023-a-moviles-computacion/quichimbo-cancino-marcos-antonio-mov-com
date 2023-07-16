@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditarPlaylist">
+    tools:context=".EditarSistemaO">
 
     <TextView
         android:id="@+id/tv_AnioCreacionP2"
@@ -95,7 +95,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtIn_descripcionP_editar2"
+        android:id="@+id/txtIn_descripcionSistemaO_editar2"
         android:layout_width="333dp"
         android:layout_height="55dp"
         android:layout_marginTop="8dp"
@@ -107,7 +107,7 @@
         app:layout_constraintVertical_bias="0.045" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtIn_anioP_editar2"
+        android:id="@+id/txtIn_fechaLanzSistemaO_editar2"
         android:layout_width="333dp"
         android:layout_height="55dp"
         android:layout_marginTop="20dp"
@@ -119,7 +119,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtIn_autorP_editar2"
+        android:id="@+id/txtIn_fileManagerSistemaO_editar2"
         android:layout_width="333dp"
         android:layout_height="55dp"
         android:layout_marginTop="16dp"
@@ -131,7 +131,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtIn_numCP_editar2"
+        android:id="@+id/txtIn_numeroVersionesSistemaO_editar2"
         android:layout_width="333dp"
         android:layout_height="55dp"
         android:layout_marginTop="16dp"

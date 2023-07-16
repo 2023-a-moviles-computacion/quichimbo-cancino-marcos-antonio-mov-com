@@ -18,7 +18,7 @@ class InicioSistemaO : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_inicio_playlist)
+        setContentView(R.layout.activity_inicio_sistema_o)
         Log.i("ciclo-vida", "onCreate")
     }
 
@@ -26,7 +26,7 @@ class InicioSistemaO : AppCompatActivity() {
         super.onStart()
         Log.i("ciclo-vida", "onStart")
 
-        val listViewEntrenador = findViewById<ListView>(R.id.lv_playlists_lista)
+        val listViewEntrenador = findViewById<ListView>(R.id.lv_sistemaO_lista)
 
         val adaptador = ArrayAdapter(
             this,
@@ -38,7 +38,7 @@ class InicioSistemaO : AppCompatActivity() {
 
         this.registerForContextMenu(listViewEntrenador)
 
-        val btnAnadirEntrenador = findViewById<Button>(R.id.btn_crear_nueva_playlist)
+        val btnAnadirEntrenador = findViewById<Button>(R.id.btn_crear_nueva_sistemaO)
         btnAnadirEntrenador.setOnClickListener {
             val intentAddEntrenador = Intent(this, CrearSistemaO::class.java)
             startActivity(intentAddEntrenador)
@@ -65,7 +65,7 @@ class InicioSistemaO : AppCompatActivity() {
         if (idItemSeleccionado == null){
             idItemSeleccionado = 0
         }
-        val listViewEntrenador = findViewById<ListView>(R.id.lv_playlists_lista)
+        val listViewEntrenador = findViewById<ListView>(R.id.lv_sistemaO_lista)
         val adaptador = ArrayAdapter(
             this,
             android.R.layout.simple_list_item_1,
@@ -94,7 +94,7 @@ class InicioSistemaO : AppCompatActivity() {
         return when (item.itemId) {
             R.id.mi_editar -> {
                 Log.i("context-menu", "Edit position: ${idItemSeleccionado}")
-                abrirActividadConParametros(EditarPlaylist::class.java)
+                abrirActividadConParametros(EditarSistemaO::class.java)
                 return true
             }
             R.id.mi_eliminar -> {
@@ -102,9 +102,9 @@ class InicioSistemaO : AppCompatActivity() {
                 eliminarEntrenador(idItemSeleccionado)
                 return true
             }
-            R.id.mi_canciones -> {
+            R.id.mi_distribuciones -> {
                 Log.i("context-menu", "Pokemons: ${idItemSeleccionado}")
-                abrirActividadConParametros(InicioCancion::class.java)
+                abrirActividadConParametros(InicioDistribucion::class.java)
                 return true
             }
             else -> super.onContextItemSelected(item)
@@ -122,7 +122,7 @@ class InicioSistemaO : AppCompatActivity() {
     fun eliminarEntrenador(
         posicioEntrenadorEnliminar: Int
     ) {
-        val listViewEntrenador = findViewById<ListView>(R.id.lv_playlists_lista)
+        val listViewEntrenador = findViewById<ListView>(R.id.lv_sistemaO_lista)
 
         var entrenadorAeliminar = BBaseDeDatosMemoria.arregloSistemaO.elementAt(posicioEntrenadorEnliminar)
         var idEntrenadorAeliminar = entrenadorAeliminar.idSistemaO

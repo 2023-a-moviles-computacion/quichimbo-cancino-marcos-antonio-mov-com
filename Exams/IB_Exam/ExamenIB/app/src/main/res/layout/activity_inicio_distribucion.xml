@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InicioCancion">
+    tools:context=".InicioDistribucion">
 
     <ListView
-        android:id="@+id/lv_canciones_lista"
+        android:id="@+id/lv_distribuciones_lista"
         android:layout_width="320dp"
         android:layout_height="400dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +32,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/tv_nombreP_C"
+        android:id="@+id/tv_nombreSistemaO_D"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -44,26 +44,26 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_playlist_cancion_lista" />
 
     <Button
-        android:id="@+id/btn_crear_cancion2"
+        android:id="@+id/btn_crear_distro2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:backgroundTint="#023E8A"
         android:text="Añadir Nueva Canción"
-        app:layout_constraintEnd_toEndOf="@+id/lv_canciones_lista"
+        app:layout_constraintEnd_toEndOf="@+id/lv_distribuciones_lista"
         app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="@+id/lv_canciones_lista"
-        app:layout_constraintTop_toBottomOf="@+id/lv_canciones_lista" />
+        app:layout_constraintStart_toStartOf="@+id/lv_distribuciones_lista"
+        app:layout_constraintTop_toBottomOf="@+id/lv_distribuciones_lista" />
 
     <Button
-        android:id="@+id/btn_volver_cancion"
+        android:id="@+id/btn_volver_distro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
         android:backgroundTint="#0077B6"
         android:text="Volver"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/lv_canciones_lista"
-        app:layout_constraintStart_toStartOf="@+id/lv_canciones_lista" />
+        app:layout_constraintEnd_toEndOf="@+id/lv_distribuciones_lista"
+        app:layout_constraintStart_toStartOf="@+id/lv_distribuciones_lista" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

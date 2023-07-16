@@ -7,7 +7,7 @@
     tools:context=".InicioSistemaO">
 
     <Button
-        android:id="@+id/btn_crear_nueva_playlist"
+        android:id="@+id/btn_crear_nueva_sistemaO"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="48dp"
@@ -15,14 +15,14 @@
         android:text="Crear  Playlist"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/lv_playlists_lista"
-        app:layout_constraintStart_toStartOf="@+id/lv_playlists_lista" />
+        app:layout_constraintEnd_toEndOf="@+id/lv_sistemaO_lista"
+        app:layout_constraintStart_toStartOf="@+id/lv_sistemaO_lista" />
 
     <ListView
-        android:id="@+id/lv_playlists_lista"
+        android:id="@+id/lv_sistemaO_lista"
         android:layout_width="320dp"
         android:layout_height="400dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_crear_nueva_playlist"
+        app:layout_constraintBottom_toTopOf="@+id/btn_crear_nueva_sistemaO"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
