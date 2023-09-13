@@ -12,13 +12,13 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
 
-class InicioPlaylist : AppCompatActivity() {
+class InicioSistemaO : AppCompatActivity() {
 
     var idItemSeleccionado = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_inicio_playlist)
+        setContentView(R.layout.activity_inicio_sistemao)
         Log.i("ciclo-vida", "onCreate")
     }
 
@@ -26,22 +26,21 @@ class InicioPlaylist : AppCompatActivity() {
         super.onStart()
         Log.i("ciclo-vida", "onStart")
 
-        val listViewEntrenador = findViewById<ListView>(R.id.lv_playlists_lista)
+        val listViewEntrenador = findViewById<ListView>(R.id.lv_sistemaO_lista)
 
         val adaptador = ArrayAdapter(
             this,
             android.R.layout.simple_list_item_1,
-            //BBaseDeDatosMemoria.arregloPlaylist
-            EquipoBaseDeDatos.TablaPlaylist!!.listarPlaylists()
+            EquipoBaseDeDatos.TablaSistemaO!!.listarSistemaO()
         )
         listViewEntrenador.adapter = adaptador
         adaptador.notifyDataSetChanged()
 
         this.registerForContextMenu(listViewEntrenador)
 
-        val btnAnadirEntrenador = findViewById<Button>(R.id.btn_crear_nueva_playlist)
+        val btnAnadirEntrenador = findViewById<Button>(R.id.btn_crear_nueva_distro)
         btnAnadirEntrenador.setOnClickListener {
-            val intentAddEntrenador = Intent(this, CrearPlaylist::class.java)
+            val intentAddEntrenador = Intent(this, CrearSistemaO::class.java)
             startActivity(intentAddEntrenador)
         }
 
@@ -50,9 +49,8 @@ class InicioPlaylist : AppCompatActivity() {
     override fun onSaveInstanceState(outState: Bundle) {
         outState.run {
             putInt("idItemSeleccionado",idItemSeleccionado)
-            putParcelableArrayList("arregloEntrenador",EquipoBaseDeDatos.TablaPlaylist!!.listarPlaylists())
-            putParcelableArrayList("arregloP-C",Registros.arregloPlaylist_Cancion)
-            //putParcelableArrayList("arregloPokemon",BBaseDeDatosMemoria.arregloCancion)
+            putParcelableArrayList("arregloEntrenador",EquipoBaseDeDatos.TablaSistemaO!!.listarSistemaO())
+            putParcelableArrayList("arregloP-C",Registros.arregloSistemaODistro)
         }
         super.onSaveInstanceState(outState)
     }
@@ -61,18 +59,18 @@ class InicioPlaylist : AppCompatActivity() {
         super.onRestoreInstanceState(savedInstanceState)
         idItemSeleccionado = savedInstanceState.getInt("idItemSeleccionado")
 
-        Registros.arregloPlaylist_Cancion = savedInstanceState.getParcelableArrayList<Playlist_Cancion>("arregloP-C")!!
-        //BBaseDeDatosMemoria.arregloPlaylist = savedInstanceState.getParcelableArrayList<Playlist>("arregloEntrenador")!!
-        //BBaseDeDatosMemoria.arregloPlaylist_Cancion = savedInstanceState.getParcelableArrayList<Playlist_Cancion>("arregloEntrenadorXpokemon")!!
-        //BBaseDeDatosMemoria.arregloCancion = savedInstanceState.getParcelableArrayList<Cancion>("arregloPokemon")!!
+        Registros.arregloSistemaODistro = savedInstanceState.getParcelableArrayList<SistemaO_Distro>("arregloP-C")!!
+        //BBaseDeDatosMemoria.arregloCancion = savedInstanceState.getParcelableArrayList<Distribucion>("arregloPokemon")!!
+        //BBaseDeDatosMemoria.arregloPlaylist = savedInstanceState.getParcelableArrayList<SistemaO>("arregloEntrenador")!!
+        //BBaseDeDatosMemoria.arregloSistemaODistro = savedInstanceState.getParcelableArrayList<SistemaO_Distro>("arregloEntrenadorXpokemon")!!
         if (idItemSeleccionado == null){
             idItemSeleccionado = 0
         }
-        val listViewEntrenador = findViewById<ListView>(R.id.lv_playlists_lista)
+        val listViewEntrenador = findViewById<ListView>(R.id.lv_sistemaO_lista)
         val adaptador = ArrayAdapter(
             this,
             android.R.layout.simple_list_item_1,
-            EquipoBaseDeDatos.TablaPlaylist!!.listarPlaylists()
+            EquipoBaseDeDatos.TablaSistemaO!!.listarSistemaO()
             //BBaseDeDatosMemoria.arregloPlaylist
         )
         listViewEntrenador.adapter = adaptador
@@ -98,26 +96,26 @@ class InicioPlaylist : AppCompatActivity() {
         return when (item.itemId) {
             R.id.mi_editar -> {
                 Log.i("context-menu", "Edit position: ${idItemSeleccionado}")
-                abrirActividadConParametros(EditarPlaylist::class.java)
+                abrirActividadConParametros(EditarSistemaO::class.java)
                 return true
             }
             R.id.mi_eliminar -> {
                 Log.i("context-menu", "Delete position: ${idItemSeleccionado}")
-                EquipoBaseDeDatos.TablaPlaylist!!.eliminarPlaylists(idItemSeleccionado)
-                val listViewPlaylist = findViewById<ListView>(R.id.lv_playlists_lista)
+                EquipoBaseDeDatos.TablaSistemaO!!.eliminarSistemaO(idItemSeleccionado)
+                val listViewSistemaO = findViewById<ListView>(R.id.lv_sistemaO_lista)
                 val adaptador = ArrayAdapter(
                     this,
                     android.R.layout.simple_list_item_1,
-                    EquipoBaseDeDatos.TablaPlaylist!!.listarPlaylists()
+                    EquipoBaseDeDatos.TablaSistemaO!!.listarSistemaO()
                 )
-                listViewPlaylist.adapter = adaptador
+                listViewSistemaO.adapter = adaptador
                 adaptador.notifyDataSetChanged()
                 //eliminarEntrenador(idItemSeleccionado)
                 return true
             }
-            R.id.mi_canciones -> {
+            R.id.mi_distros -> {
                 Log.i("context-menu", "Pokemons: ${idItemSeleccionado}")
-                abrirActividadConParametros(InicioCancion::class.java)
+                abrirActividadConParametros(InicioDistro::class.java)
                 return true
             }
             else -> super.onContextItemSelected(item)

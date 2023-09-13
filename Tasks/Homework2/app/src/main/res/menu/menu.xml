@@ -8,6 +8,6 @@
         android:id="@+id/mi_eliminar"
         android:title="Eliminar" />
     <item
-        android:id="@+id/mi_canciones"
-        android:title="Ver Canciones" />
+        android:id="@+id/mi_distros"
+        android:title="Ver Distros" />
 </menu>

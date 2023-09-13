@@ -4,44 +4,44 @@ class Registros {
 
     companion object{
 
-        var arregloPlaylist_Cancion = arrayListOf<Playlist_Cancion>()
+        var arregloSistemaODistro = arrayListOf<SistemaO_Distro>()
 
         init {
-            // Playlists
+            // SistemaO
 
-            EquipoBaseDeDatos.TablaPlaylist!!.crearPlaylist(1,"Exitos","lo mejor","2023","Brayan","14")
+            EquipoBaseDeDatos.TablaSistemaO!!.crearSistemaO(1,"Windows","Multiproposito","1985","Microsoft","23")
 
-            EquipoBaseDeDatos.TablaPlaylist!!.crearPlaylist(2,"Clasicos","Solo Temazos","2022","Samuel","15")
+            EquipoBaseDeDatos.TablaSistemaO!!.crearSistemaO(2,"Ubuntu","Multiproposito","1995","Canonical","32")
 
-            EquipoBaseDeDatos.TablaPlaylist!!.crearPlaylist(3,"Rolitas","inolvidables","2022","Saul","16")
-
-
-            // Canciones
-            EquipoBaseDeDatos.TablaPlaylist!!.crearCancion(1,"No longer bound","Forrest Frank","3","Trap","2020")
-
-            EquipoBaseDeDatos.TablaPlaylist!!.crearCancion(2,"Most High","MTM Isaiah","3","Trap","2023")
-
-            EquipoBaseDeDatos.TablaPlaylist!!.crearCancion(3,"Emmanuel","Kelo","3","Pop","2021")
+            EquipoBaseDeDatos.TablaSistemaO!!.crearSistemaO(3,"Blackberry","Blackberry","2009","Blackberry","12")
 
 
-            // Playlists y Canciones
-            arregloPlaylist_Cancion.add(
-                Playlist_Cancion(1, 1,2)
+            // Distros
+            EquipoBaseDeDatos.TablaSistemaO!!.crearDistro(1,"Windows vista","X86","16","FileExplorer","2007")
+
+            EquipoBaseDeDatos.TablaSistemaO!!.crearDistro(2,"Xubutnu","X86","16","Gnome","2022")
+
+            EquipoBaseDeDatos.TablaSistemaO!!.crearDistro(3,"Blackberry 2.0","RISC","2","Explorer","2010")
+
+
+            // SistemaO y Distros
+            arregloSistemaODistro.add(
+                SistemaO_Distro(1, 1,2)
             )
-            arregloPlaylist_Cancion.add(
-                Playlist_Cancion(2, 1, 3)
+            arregloSistemaODistro.add(
+                SistemaO_Distro(2, 1, 3)
             )
-            arregloPlaylist_Cancion.add(
-                Playlist_Cancion(3,2, 3)
+            arregloSistemaODistro.add(
+                SistemaO_Distro(3,2, 3)
             )
-            arregloPlaylist_Cancion.add(
-                Playlist_Cancion(4,2,1)
+            arregloSistemaODistro.add(
+                SistemaO_Distro(4,2,1)
             )
-            arregloPlaylist_Cancion.add(
-                Playlist_Cancion(5,2,2)
+            arregloSistemaODistro.add(
+                SistemaO_Distro(5,2,2)
             )
-            arregloPlaylist_Cancion.add(
-                Playlist_Cancion(6,3,2)
+            arregloSistemaODistro.add(
+                SistemaO_Distro(6,3,2)
             )
 
         }

@@ -4,23 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InicioCancion">
+    tools:context=".InicioDistro">
 
     <ListView
-        android:id="@+id/lv_canciones_lista"
+        android:id="@+id/lv_distros_lista"
         android:layout_width="320dp"
         android:layout_height="400dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
 
     <TextView
-        android:id="@+id/tv_playlist_cancion_lista"
+        android:id="@+id/tv_sistemao_distro_lista"
         android:layout_width="316dp"
         android:layout_height="50dp"
         android:layout_marginTop="70dp"
-        android:text="Lista de Canciones"
+        android:text="Lista de Distros"
         android:textColor="#000000"
         android:textSize="34sp"
         android:textStyle="bold"
@@ -32,38 +34,38 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/tv_nombreP_C"
+        android:id="@+id/tv_nombreSistemaO"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Playlist: Temazos"
+        android:text="SistemaO: Windows"
         android:textColor="#090909"
-        app:layout_constraintEnd_toEndOf="@+id/tv_playlist_cancion_lista"
+        app:layout_constraintEnd_toEndOf="@+id/tv_sistemao_distro_lista"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_playlist_cancion_lista"
-        app:layout_constraintTop_toBottomOf="@+id/tv_playlist_cancion_lista" />
+        app:layout_constraintStart_toStartOf="@+id/tv_sistemao_distro_lista"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sistemao_distro_lista" />
 
     <Button
-        android:id="@+id/btn_crear_cancion2"
+        android:id="@+id/btn_crear_distro2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#023E8A"
-        android:text="Añadir Nueva Canción"
-        app:layout_constraintEnd_toEndOf="@+id/lv_canciones_lista"
+        android:backgroundTint="#47C624"
+        android:text="Añadir Nueva Distro"
+        app:layout_constraintEnd_toEndOf="@+id/lv_distros_lista"
         app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="@+id/lv_canciones_lista"
-        app:layout_constraintTop_toBottomOf="@+id/lv_canciones_lista" />
+        app:layout_constraintStart_toStartOf="@+id/lv_distros_lista"
+        app:layout_constraintTop_toBottomOf="@+id/lv_distros_lista" />
 
     <Button
-        android:id="@+id/btn_volver_cancion"
+        android:id="@+id/btn_volver_distro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
-        android:backgroundTint="#0077B6"
+        android:backgroundTint="#5A2FA5"
         android:text="Volver"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/lv_canciones_lista"
-        app:layout_constraintStart_toStartOf="@+id/lv_canciones_lista" />
+        app:layout_constraintEnd_toEndOf="@+id/lv_distros_lista"
+        app:layout_constraintStart_toStartOf="@+id/lv_distros_lista" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

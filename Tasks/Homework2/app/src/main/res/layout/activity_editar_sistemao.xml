@@ -4,71 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditarPlaylist">
+    tools:context=".EditarSistemaO">
 
     <TextView
-        android:id="@+id/tv_AnioCreacionP2"
+        android:id="@+id/tv_anio_lanzamiento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Año"
+        android:text="Año de lanzamiento"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintHorizontal_bias="0.128"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.415" />
 
     <TextView
-        android:id="@+id/tv_AutorP2"
+        android:id="@+id/tv_ownerSistemaO"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Autor"
+        android:text="Propietario"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintHorizontal_bias="0.108"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.561" />
 
     <TextView
-        android:id="@+id/tv_NumCanciones2"
+        android:id="@+id/tv_numDistros"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Número de Canciones"
+        android:text="Número de Distros"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.139"
+        app:layout_constraintHorizontal_bias="0.135"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.703" />
+        app:layout_constraintVertical_bias="0.702" />
 
     <TextView
-        android:id="@+id/tv_playlist_editar"
+        android:id="@+id/tv_sistemao_editar"
         android:layout_width="324dp"
         android:layout_height="46dp"
         android:layout_marginTop="50dp"
-        android:text="Editar Playlist"
+        android:text="Editar Sistema Operativo"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.436"
+        app:layout_constraintHorizontal_bias="0.425"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/tv_NombrePlayl"
+        android:id="@+id/tv_nombre_sistemao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nombre de la Playlist"
+        android:text="Nombre del Sistema O. "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.134" />
+        app:layout_constraintVertical_bias="0.153" />
 
     <TextView
         android:id="@+id/tv_Descripcion2"
@@ -83,69 +83,74 @@
         app:layout_constraintVertical_bias="0.282" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtIn_nombreP_editar2"
+        android:id="@+id/txtIn_nombreSistemaO_editar2"
         android:layout_width="333dp"
-        android:layout_height="55dp"
+        android:layout_height="40dp"
         android:layout_marginTop="20dp"
+        android:hint="Windows"
         app:layout_constraintBottom_toTopOf="@+id/tv_Descripcion2"
-        app:layout_constraintEnd_toEndOf="@+id/tv_NombrePlayl"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_NombrePlayl"
-        app:layout_constraintTop_toBottomOf="@+id/tv_NombrePlayl"
+        app:layout_constraintEnd_toEndOf="@+id/tv_nombre_sistemao"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toStartOf="@+id/tv_nombre_sistemao"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nombre_sistemao"
         app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtIn_descripcionP_editar2"
+        android:id="@+id/txtIn_descripcionSistemaO_editar2"
         android:layout_width="333dp"
-        android:layout_height="55dp"
+        android:layout_height="40dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_AnioCreacionP2"
+        android:hint="Multitask"
+        app:layout_constraintBottom_toTopOf="@+id/tv_anio_lanzamiento"
         app:layout_constraintEnd_toEndOf="@+id/tv_Descripcion2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tv_Descripcion2"
         app:layout_constraintTop_toBottomOf="@+id/tv_Descripcion2"
-        app:layout_constraintVertical_bias="0.045" />
+        app:layout_constraintVertical_bias="0.321" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtIn_anioP_editar2"
+        android:id="@+id/txtIn_releaseYearSistemaO_editar2"
         android:layout_width="333dp"
-        android:layout_height="55dp"
+        android:layout_height="40dp"
         android:layout_marginTop="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_AutorP2"
-        app:layout_constraintEnd_toEndOf="@+id/tv_AnioCreacionP2"
+        android:hint="2002"
+        app:layout_constraintBottom_toTopOf="@+id/tv_ownerSistemaO"
+        app:layout_constraintEnd_toEndOf="@+id/tv_anio_lanzamiento"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_AnioCreacionP2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_AnioCreacionP2"
+        app:layout_constraintStart_toStartOf="@+id/tv_anio_lanzamiento"
+        app:layout_constraintTop_toBottomOf="@+id/tv_anio_lanzamiento"
         app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtIn_autorP_editar2"
+        android:id="@+id/txtIn_ownerSistemaO_editar2"
         android:layout_width="333dp"
-        android:layout_height="55dp"
+        android:layout_height="40dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_NumCanciones2"
-        app:layout_constraintEnd_toEndOf="@+id/tv_AutorP2"
+        android:hint="Canonical"
+        app:layout_constraintBottom_toTopOf="@+id/tv_numDistros"
+        app:layout_constraintEnd_toEndOf="@+id/tv_ownerSistemaO"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_AutorP2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_AutorP2"
+        app:layout_constraintStart_toStartOf="@+id/tv_ownerSistemaO"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ownerSistemaO"
         app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtIn_numCP_editar2"
+        android:id="@+id/txtIn_numDistros_editar2"
         android:layout_width="333dp"
-        android:layout_height="55dp"
+        android:layout_height="40dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_NumCanciones2"
+        android:hint="3"
+        app:layout_constraintEnd_toEndOf="@+id/tv_numDistros"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_NumCanciones2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_NumCanciones2" />
+        app:layout_constraintStart_toStartOf="@+id/tv_numDistros"
+        app:layout_constraintTop_toBottomOf="@+id/tv_numDistros" />
 
     <Button
         android:id="@+id/btn_guardar_cambios2"
         android:layout_width="119dp"
         android:layout_height="41dp"
         android:layout_marginBottom="84dp"
-        android:backgroundTint="#023E8A"
+        android:backgroundTint="#47C624"
         android:text="Guardar Cambios"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -156,7 +161,7 @@
         android:layout_width="122dp"
         android:layout_height="47dp"
         android:layout_marginBottom="24dp"
-        android:backgroundTint="#0077B6"
+        android:backgroundTint="#E80F28"
         android:text="Cancelar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

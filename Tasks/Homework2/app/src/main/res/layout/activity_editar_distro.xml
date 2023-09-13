@@ -4,69 +4,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditarCancion">
+    tools:context=".EditarDistro">
 
     <TextView
-        android:id="@+id/tv_EditarCancion"
-        android:layout_width="326dp"
-        android:layout_height="58dp"
-        android:text="Editar Canción"
+        android:id="@+id/tv_EditarDistro"
+        android:layout_width="343dp"
+        android:layout_height="46dp"
+        android:text="Editar Distro"
         android:textColor="#000000"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.364"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
 
     <TextView
-        android:id="@+id/tv_nombre_cancion_editar"
+        android:id="@+id/tv_nombre_distro_editar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Nombre de la Canción"
-        app:layout_constraintEnd_toEndOf="@+id/tv_EditarCancion"
+        android:text="Nombre de la Distro"
+        app:layout_constraintEnd_toEndOf="@+id/tv_EditarDistro"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_EditarCancion"
-        app:layout_constraintTop_toBottomOf="@+id/tv_EditarCancion" />
+        app:layout_constraintStart_toStartOf="@+id/tv_EditarDistro"
+        app:layout_constraintTop_toBottomOf="@+id/tv_EditarDistro" />
 
     <TextView
-        android:id="@+id/tv_artista_cancion_editar"
+        android:id="@+id/tv_arqitectura_distro_editar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Artista"
+        android:text="Arquitectura"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintHorizontal_bias="0.101"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.268" />
+        app:layout_constraintVertical_bias="0.254" />
 
     <TextView
-        android:id="@+id/tv_duracion_cancion_editar"
+        android:id="@+id/tv_cores_Distro_editar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Duración (min)"
+        android:text="Cores"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.097"
+        app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.422" />
+        app:layout_constraintVertical_bias="0.394" />
 
     <TextView
-        android:id="@+id/tv_genero_cancion_editar"
+        android:id="@+id/tv_fileManager_editar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Género"
+        android:text="File Manager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintHorizontal_bias="0.103"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.551" />
+        app:layout_constraintVertical_bias="0.536" />
 
     <TextView
         android:id="@+id/tv_anioRelease_cancion_editar"
@@ -75,93 +75,97 @@
         android:text="Año de Lanzamiento"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.109"
+        app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.693" />
+        app:layout_constraintVertical_bias="0.674" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtIn_nombreC_editar"
+        android:id="@+id/txtIn_nombreDistro_editar"
         android:layout_width="333dp"
-        android:layout_height="55dp"
+        android:layout_height="40dp"
         android:layout_marginTop="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_artista_cancion_editar"
-        app:layout_constraintEnd_toEndOf="@+id/tv_nombre_cancion_editar"
+        android:hint="Xubutnu"
+        app:layout_constraintBottom_toTopOf="@+id/tv_arqitectura_distro_editar"
+        app:layout_constraintEnd_toEndOf="@+id/tv_nombre_distro_editar"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_nombre_cancion_editar"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nombre_cancion_editar"
+        app:layout_constraintStart_toStartOf="@+id/tv_nombre_distro_editar"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nombre_distro_editar"
+        app:layout_constraintVertical_bias="0.19" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtIn_arquitecturaDistro_editar"
+        android:layout_width="333dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:hint="RISC"
+        app:layout_constraintBottom_toTopOf="@+id/tv_cores_Distro_editar"
+        app:layout_constraintEnd_toEndOf="@+id/tv_arqitectura_distro_editar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_arqitectura_distro_editar"
+        app:layout_constraintTop_toBottomOf="@+id/tv_arqitectura_distro_editar"
+        app:layout_constraintVertical_bias="0.142" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtIn_coresDistro_editar"
+        android:layout_width="333dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:hint="16"
+        app:layout_constraintBottom_toTopOf="@+id/tv_fileManager_editar"
+        app:layout_constraintEnd_toEndOf="@+id/tv_cores_Distro_editar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_cores_Distro_editar"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cores_Distro_editar"
         app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtIn_artistaC_editar"
+        android:id="@+id/txtIn_gestorFilesDistro_editar"
         android:layout_width="333dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_duracion_cancion_editar"
-        app:layout_constraintEnd_toEndOf="@+id/tv_artista_cancion_editar"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_artista_cancion_editar"
-        app:layout_constraintTop_toBottomOf="@+id/tv_artista_cancion_editar"
-        app:layout_constraintVertical_bias="0.03" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtIn_duracionC_editar"
-        android:layout_width="333dp"
-        android:layout_height="55dp"
+        android:layout_height="40dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_genero_cancion_editar"
-        app:layout_constraintEnd_toEndOf="@+id/tv_duracion_cancion_editar"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_duracion_cancion_editar"
-        app:layout_constraintTop_toBottomOf="@+id/tv_duracion_cancion_editar"
-        app:layout_constraintVertical_bias="0.071" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtIn_generoC_editar"
-        android:layout_width="333dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="16dp"
+        android:hint="Gnome"
         app:layout_constraintBottom_toTopOf="@+id/tv_anioRelease_cancion_editar"
-        app:layout_constraintEnd_toEndOf="@+id/tv_genero_cancion_editar"
+        app:layout_constraintEnd_toEndOf="@+id/tv_fileManager_editar"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_genero_cancion_editar"
-        app:layout_constraintTop_toBottomOf="@+id/tv_genero_cancion_editar"
+        app:layout_constraintStart_toStartOf="@+id/tv_fileManager_editar"
+        app:layout_constraintTop_toBottomOf="@+id/tv_fileManager_editar"
         app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtIn_anioC_editar"
+        android:id="@+id/txtIn_releaseDistro_editar"
         android:layout_width="333dp"
-        android:layout_height="55dp"
+        android:layout_height="40dp"
         android:layout_marginTop="12dp"
+        android:hint="2023"
         app:layout_constraintEnd_toEndOf="@+id/tv_anioRelease_cancion_editar"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tv_anioRelease_cancion_editar"
         app:layout_constraintTop_toBottomOf="@+id/tv_anioRelease_cancion_editar" />
 
     <Button
-        android:id="@+id/btn_editar_cancion"
+        android:id="@+id/btn_editar_distro"
         android:layout_width="201dp"
         android:layout_height="43dp"
-        android:backgroundTint="#023E8A"
+        android:backgroundTint="#47C624"
         android:text="Guardar Cambios"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtIn_anioC_editar"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/txtIn_releaseDistro_editar"
+        app:layout_constraintVertical_bias="0.264" />
 
     <Button
-        android:id="@+id/btn_cancelar_cancion_editar"
+        android:id="@+id/btn_cancelar_distro_editar"
         android:layout_width="115dp"
         android:layout_height="39dp"
         android:layout_marginTop="60dp"
-        android:backgroundTint="#0077B6"
+        android:backgroundTint="#E80F28"
         android:text="Cancelar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtIn_anioC_editar"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/txtIn_releaseDistro_editar"
+        app:layout_constraintVertical_bias="0.525" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

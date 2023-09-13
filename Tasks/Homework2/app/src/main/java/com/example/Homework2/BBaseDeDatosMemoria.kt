@@ -3,53 +3,32 @@ package com.example.Homework2
 class BBaseDeDatosMemoria {
 
     companion object{
-        var arregloPlaylist = arrayListOf<Playlist>()
-        var arregloCancion = arrayListOf<Cancion>()
-        var arregloPlaylist_Cancion = arrayListOf<Playlist_Cancion>()
+        var arregloSistemaO = arrayListOf<SistemaO>()
+        var arregloDistribucion = arrayListOf<Distribucion>()
+        var arregloSistemaO_Distribucion = arrayListOf<SistemaO_Distro>()
 
         init {
-            // Playlist
-            arregloPlaylist.add(
-                Playlist(1,"Temazos", "clasicos",2020,"Brayan Cunduri",14)
+            // Sistema Operativo
+            arregloSistemaO.add(
+                SistemaO(1,"Windows", "Multiprosito",1985,"Microsoft",13)
             )
-            arregloPlaylist.add(
-                Playlist(2,"Letras", "crazy",2019,"Samuel Cunduri",15)
+            arregloSistemaO.add(
+                SistemaO(2,"Ubuntu", "Multipropisito",1995,"Canonical",15)
             )
-            arregloPlaylist.add(
-                Playlist(3,"Amazing", "TopTen",2021,"Roberto Peres",17)
+            arregloSistemaO.add(
+                SistemaO(3,"BlacberrySO", "Cellphone",2008,"Blackberry",17)
             )
 
-            // Canciones
-            arregloCancion.add(
-                Cancion(1,"Repent","MTM Isaiah",3,"Regueton",2023)
+            // Distribuciones
+            arregloDistribucion.add(
+                Distribucion(1,"Windows_Vista","X86",16,"FileExplorer",2007)
             )
-            arregloCancion.add(
-                Cancion(2,"Calling","Swae Lee",4,"Regueton",2019)
+            arregloDistribucion.add(
+                Distribucion(2,"Xubuntu","X86",16,"Gnome",2013)
             )
-            arregloCancion.add(
-                Cancion(3,"Everything","Hulvey",3,"Regueton",2022)
+            arregloDistribucion.add(
+                Distribucion(3,"Blacberry_2","RISC",4,"Explorador",2010)
             )
-           /*
-            // Playlists y Canciones
-            arregloPlaylist_Cancion.add(
-                Playlist_Cancion(1, "Calling", 1,2)
-            )
-            arregloPlaylist_Cancion.add(
-                Playlist_Cancion(2, "Everything", 1, 3)
-            )
-            arregloPlaylist_Cancion.add(
-                Playlist_Cancion(3, "Everything",2, 3)
-            )
-            arregloPlaylist_Cancion.add(
-                Playlist_Cancion(4, "Repent",2,1)
-            )
-            arregloPlaylist_Cancion.add(
-                Playlist_Cancion(5, "Calling",2,2)
-            )
-            arregloPlaylist_Cancion.add(
-                Playlist_Cancion(6, "Calling",3,2)
-            )*/
-
         }
 
     }

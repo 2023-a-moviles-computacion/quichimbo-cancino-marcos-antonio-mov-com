@@ -3,12 +3,12 @@ package com.example.Homework2
 import android.os.Parcel
 import android.os.Parcelable
 
-class Playlist_Cancion (
+class SistemaO_Distro (
 
-    val idPlaylist_Cancion: Int,
+    val idSistemaO_Distro: Int,
     //var nombreP_C: String?,
-    val idPlaylist: Int,
-    val idCancion: Int
+    val idSistemaO: Int,
+    val idDistro: Int
 
     ): Parcelable  {
 
@@ -25,22 +25,22 @@ class Playlist_Cancion (
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeInt(idPlaylist_Cancion)
+        parcel.writeInt(idSistemaO_Distro)
         //parcel.writeString(nombreP_C)
-        parcel.writeInt(idPlaylist)
-        parcel.writeInt(idCancion)
+        parcel.writeInt(idSistemaO)
+        parcel.writeInt(idDistro)
     }
 
     override fun describeContents(): Int {
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<Playlist_Cancion> {
-        override fun createFromParcel(parcel: Parcel): Playlist_Cancion {
-            return Playlist_Cancion(parcel)
+    companion object CREATOR : Parcelable.Creator<SistemaO_Distro> {
+        override fun createFromParcel(parcel: Parcel): SistemaO_Distro {
+            return SistemaO_Distro(parcel)
         }
 
-        override fun newArray(size: Int): Array<Playlist_Cancion?> {
+        override fun newArray(size: Int): Array<SistemaO_Distro?> {
             return arrayOfNulls(size)
         }
     }

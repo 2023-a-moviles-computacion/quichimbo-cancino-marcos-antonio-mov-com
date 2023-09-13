@@ -4,97 +4,97 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CrearPlaylist">
+    tools:context=".CrearSistemaO">
 
     <TextView
-        android:id="@+id/tv_playlist_crear"
-        android:layout_width="324dp"
-        android:layout_height="46dp"
+        android:id="@+id/tv_sistemaO_crear"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
         android:layout_marginTop="50dp"
-        android:text="Crear Nueva Playlist"
+        android:text="Crear Nuevo Sistema Operativo"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.436"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtIn_nombreP_editar2"
-        android:layout_width="333dp"
-        android:layout_height="55dp"
-        android:hint="Ejemplo: Mi Lista"
+        android:id="@+id/txtIn_nombreSistemaO_editar2"
+        android:layout_width="331dp"
+        android:layout_height="40dp"
+        android:hint="Ejemplo: Windows"
         app:layout_constraintBottom_toTopOf="@+id/tv_Descripcion"
-        app:layout_constraintEnd_toEndOf="@+id/tv_NombrePlaylist"
+        app:layout_constraintEnd_toEndOf="@+id/tv_NombreSistemaO"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_NombrePlaylist"
-        app:layout_constraintTop_toBottomOf="@+id/tv_NombrePlaylist"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="@+id/tv_NombreSistemaO"
+        app:layout_constraintTop_toBottomOf="@+id/tv_NombreSistemaO"
+        app:layout_constraintVertical_bias="0.6" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtIn_descripcionP_editar"
+        android:id="@+id/txtIn_descripcionSistemaO_editar"
         android:layout_width="333dp"
-        android:layout_height="55dp"
+        android:layout_height="40dp"
         android:layout_marginTop="4dp"
-        android:hint="Ejemplo: Buenos éxitos"
-        app:layout_constraintBottom_toTopOf="@+id/tv_AnioCreacionP"
+        android:hint="Ejemplo: Single task"
+        app:layout_constraintBottom_toTopOf="@+id/tv_AnioCreacionSistemaO"
         app:layout_constraintEnd_toEndOf="@+id/tv_Descripcion"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tv_Descripcion"
-        app:layout_constraintTop_toBottomOf="@+id/tv_Descripcion" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_Descripcion"
+        app:layout_constraintVertical_bias="0.423" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtIn_anioP_editar"
+        android:id="@+id/txtIn_anioCreacionSistemaO_editar"
         android:layout_width="333dp"
-        android:layout_height="55dp"
+        android:layout_height="40dp"
         android:layout_marginTop="12dp"
-        android:hint="Ejemplo: 2020"
-        app:layout_constraintBottom_toTopOf="@+id/tv_AutorP"
-        app:layout_constraintEnd_toEndOf="@+id/tv_AnioCreacionP"
+        android:hint="Ejemplo: 1995"
+        app:layout_constraintBottom_toTopOf="@+id/tv_OwnerSistemaO"
+        app:layout_constraintEnd_toEndOf="@+id/tv_AnioCreacionSistemaO"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_AnioCreacionP"
-        app:layout_constraintTop_toBottomOf="@+id/tv_AnioCreacionP"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="@+id/tv_AnioCreacionSistemaO"
+        app:layout_constraintTop_toBottomOf="@+id/tv_AnioCreacionSistemaO" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtIn_autorP_editar"
+        android:id="@+id/txtIn_creadorSistemaO_editar"
         android:layout_width="333dp"
-        android:layout_height="55dp"
+        android:layout_height="40dp"
         android:layout_marginTop="12dp"
-        android:hint="Ejemplo: Brayan Cunduri"
-        app:layout_constraintBottom_toTopOf="@+id/tv_NumCanciones"
-        app:layout_constraintEnd_toEndOf="@+id/tv_AutorP"
+        android:hint="Ejemplo: Microsoft"
+        app:layout_constraintBottom_toTopOf="@+id/tv_NumDistros"
+        app:layout_constraintEnd_toEndOf="@+id/tv_OwnerSistemaO"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_AutorP"
-        app:layout_constraintTop_toBottomOf="@+id/tv_AutorP"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="@+id/tv_OwnerSistemaO"
+        app:layout_constraintTop_toBottomOf="@+id/tv_OwnerSistemaO"
+        app:layout_constraintVertical_bias="0.348" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtIn_numCP_editar"
+        android:id="@+id/txtIn_numDistros_editar"
         android:layout_width="333dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
         android:hint="Ejemplo: 10"
-        app:layout_constraintEnd_toEndOf="@+id/tv_NumCanciones"
+        app:layout_constraintEnd_toEndOf="@+id/tv_NumDistros"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_NumCanciones"
-        app:layout_constraintTop_toBottomOf="@+id/tv_NumCanciones" />
+        app:layout_constraintStart_toStartOf="@+id/tv_NumDistros"
+        app:layout_constraintTop_toBottomOf="@+id/tv_NumDistros" />
 
     <TextView
-        android:id="@+id/tv_NombrePlaylist"
+        android:id="@+id/tv_NombreSistemaO"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Nombre de la Playlist"
+        android:text="Nombre del Sistema O. "
         android:textColor="#000000"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_playlist_crear"
-        app:layout_constraintHorizontal_bias="0.005"
-        app:layout_constraintStart_toStartOf="@+id/tv_playlist_crear"
-        app:layout_constraintTop_toBottomOf="@+id/tv_playlist_crear" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_sistemaO_crear"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_sistemaO_crear"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sistemaO_crear" />
 
     <TextView
         android:id="@+id/tv_Descripcion"
@@ -105,59 +105,59 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintHorizontal_bias="0.091"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.255" />
+        app:layout_constraintVertical_bias="0.289" />
 
     <TextView
-        android:id="@+id/tv_AnioCreacionP"
+        android:id="@+id/tv_AnioCreacionSistemaO"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Año"
+        android:text="Año de lanzamiento"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.099"
+        app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.379" />
+        app:layout_constraintVertical_bias="0.421" />
 
     <TextView
-        android:id="@+id/tv_AutorP"
+        android:id="@+id/tv_OwnerSistemaO"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Autor"
+        android:text="Propietario"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.517" />
+        app:layout_constraintVertical_bias="0.558" />
 
     <TextView
-        android:id="@+id/tv_NumCanciones"
+        android:id="@+id/tv_NumDistros"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Número de Canciones"
+        android:text="Número de Distros"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintHorizontal_bias="0.107"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.665" />
+        app:layout_constraintVertical_bias="0.715" />
 
     <Button
         android:id="@+id/btn_guardar_cambios"
         android:layout_width="114dp"
         android:layout_height="41dp"
-        android:layout_marginBottom="108dp"
-        android:backgroundTint="#023e8a"
+        android:layout_marginBottom="84dp"
+        android:backgroundTint="#47C624"
         android:text="Crear"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -168,8 +168,8 @@
         android:id="@+id/btn_cancelar_editar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        android:backgroundTint="#0077B6"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="#E80F28"
         android:text="Cancelar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
