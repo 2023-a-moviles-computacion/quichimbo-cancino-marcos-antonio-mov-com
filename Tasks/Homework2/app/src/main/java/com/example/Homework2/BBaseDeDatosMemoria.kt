@@ -1,4 +1,4 @@
-package com.example.cunduribrayan_examenb1
+package com.example.Homework2
 
 class BBaseDeDatosMemoria {
 

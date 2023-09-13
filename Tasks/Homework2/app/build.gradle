@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.cunduribrayan_examenb1'
+    namespace 'com.example.Homework2'
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.cunduribrayan_examenb1"
+        applicationId "com.example.Homework2"
         minSdk 24
         targetSdk 32
         versionCode 1
