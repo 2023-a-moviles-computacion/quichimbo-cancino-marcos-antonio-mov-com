@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E8E3E3">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="399dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingBottom="10dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="336dp"
+                android:background="#FBFBFB"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvnombreArchivo"
+                    android:layout_width="311dp"
+                    android:layout_height="68dp"
+                    android:text="Nombre de la noticia"
+                    android:textColor="#AE000000"
+                    app:layout_constraintBottom_toTopOf="@+id/imArchivo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.062" />
+
+                <TextView
+                    android:id="@+id/tvalmacenamientoArchivo"
+                    android:layout_width="113dp"
+                    android:layout_height="17dp"
+                    android:text="Escrito por"
+                    android:textColor="#7A000000"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.129"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.272" />
+
+                <TextView
+                    android:id="@+id/tvfechaArchivo"
+                    android:layout_width="335dp"
+                    android:layout_height="77dp"
+                    android:layout_gravity="left"
+                    android:layout_marginBottom="8dp"
+                    android:text="DesarrolloNoticia"
+                    android:textColor="#AE000000"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imArchivo"
+                    android:layout_width="321dp"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="32dp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvfechaArchivo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/ic_baseline_person_24" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</RelativeLayout>
